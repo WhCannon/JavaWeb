@@ -41,5 +41,38 @@
 	</ul>
  </body>
 </html>
+```
 
+* 表格标签
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+ </head>
+ <body>
+	<table border="1" bordercolor="blue" cellspacing="0" width="400" height="150">
+		<caption>人员信息</caption>
+		<tr align="center">
+			<td>姓名</td>
+			<td>性别</td>
+			<td>年龄</td>
+		</tr>
+		<tr>
+			<td align="right">东方不败</td>
+			<td>男</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>岳不群</td>
+			<td>女</td>
+			<td>30</td>
+		</tr>
+		<tr>
+			<th>林平之</th>
+			<th>男</th>
+			<th>40</th>
+		</tr>
+	</table>
+ </body>
+</html>
 ```
