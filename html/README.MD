@@ -111,6 +111,19 @@
 </html>
 ```
 
+### 框架标签
+```html
+<frameset rows="80,*">    //把页面划分成上下两部分 
+	<frame name="top" src="a.html">       //上面的页面
+		<frameset cols="150,*">        //把下面部分划分成左右两部分
+			<frame name="lower_left" src="b.html">  //左边的页面
+			<frame name="lower_right" src="c.html"> //右边的页面
+		</frameset> 
+</frameset> 
+```
+
+
+
 ## 练 习
 ### [练习1](#答案1)
 表单标签，注册界面案例
