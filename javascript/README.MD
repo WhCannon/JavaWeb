@@ -5,7 +5,7 @@
 
 
 
-##基本语法
+## 基本语法
 ### 定义方法
 ```html
 <script type="text/javascript">		
