@@ -2,6 +2,7 @@
   - [css与html结合](#css与html结合)
   - [基本选择器](#基本选择器)
   - [扩展选择器](#扩展选择器)
+  - [盒子模型](#盒子模型)
   
   
 ## css与html结合
@@ -156,6 +157,35 @@
 
 <a href="http://www.sina1.com.cn" target="_blank">CSS概述和与HTML的结合方式超链接一</a>
 
+ </body>
+</html>
+```
+
+## 盒子模型
+###边框
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+
+	div {
+		width: 200px;
+		height: 100px;
+
+		border: 2px solid blue;
+	}
+
+	#div12 {
+		border-right: 2px dashed yellow;
+	}
+  </style>
+ </head>
+ <body>
+
+<div id="div11">AAAAAAAAAAAAAAA</div>
+<div id="div12">BBBBBBBBBBBBBBB</div>
+<div id="div13">CCCCCCCCCCCCCCC</div>
  </body>
 </html>
 ```
