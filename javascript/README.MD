@@ -1,5 +1,6 @@
 # JavaScript
   - [基本语法](#基本语法)
+  - [String](#string)
   - [练习](#练-习)
 
 
@@ -28,6 +29,34 @@
 		alert(add2(3,4,5));		
 	</script>
 ```
+
+## String
+```html
+<script type="text/javascript">
+		var str = "abcde";
+		document.write(str.length);//长度
+
+		var str1 = "asdf";
+		document.write(str1.bold());//字符串加粗
+
+		var str2 = "www";
+		document.write(str2.fontcolor("red"));//设置字符串的颜色
+
+		var str3 = "qqqqq";
+		document.write(str3.fontsize(5));//设置字体大小
+
+		var str4 = "haha";
+		document.write(str4.link("hello.html"));//将字符串显示成超链接
+
+		var s1 = "100";
+		var s2 = "200";
+		var s3 = "300"
+		document.write(s1.sub());//下标
+		document.write(s3);
+		document.write(s2.sup());//上标
+	</script>
+```
+
 
 ## 练习
 ### [练习1](#答案1)
