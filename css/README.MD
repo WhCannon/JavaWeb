@@ -3,6 +3,7 @@
   - [基本选择器](#基本选择器)
   - [扩展选择器](#扩展选择器)
   - [盒子模型](#盒子模型)
+  - [练习](#练-习)
   
   
 ## css与html结合
@@ -188,4 +189,37 @@
 <div id="div13">CCCCCCCCCCCCCCC</div>
  </body>
 </html>
+```
+
+
+## 练 习
+### [练习1](#答案1)
+在图片上显示文字
+
+
+
+## 答案1
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+	#tex21 {
+		position: absolute;
+
+		top: 50px;
+		left: 30px;
+
+		color: red;
+	}
+  </style>
+ </head>
+ <body>
+
+	
+	<div id="img21"><img src="aa.jpg" width="450" height="350"/></div>
+	<div id="tex21">这是很多美女</div>
+ </body>
+</html>
+
 ```
