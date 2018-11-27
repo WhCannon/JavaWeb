@@ -1,6 +1,7 @@
 # JavaScript
   - [基本语法](#基本语法)
   - [String](#string)
+  - [Array](#array)
   - [练习](#练-习)
 
 
@@ -83,6 +84,37 @@
 
 		document.write("<br/>");
 		document.write(str7.substring(3,5)); //de，截取[3,5)位置的字符
+	</script>
+```
+
+## Array
+```html
+<script type="text/javascript">
+		var arr1 = [1,2,3];
+		document.write(arr1.length);//获取长度
+
+		var arr11 = [1,2,3];
+		var arr12 = [4,5,6];
+		document.write(arr11.concat(arr12));//连接数组，并返回结果
+
+		var arr13 = ["a","b","c"];
+		document.write(arr13.join("-"));//根据指定字符把数组分隔(默认是逗号)
+
+		var arr14 = ["a","b","c"];
+		document.write("new length: "+arr14.push("zhangsan"));//在数组末尾添加元素，并返回新的长度
+
+		var arr15 = ["aaa","bbb","ccc"];
+		var arr16 = ["www","qqq"];
+		document.write("new length:"+arr15.push(arr16));//length=4,把arr16整体当做一个字符串
+		document.write("new array: "+arr15);
+
+		var arr17 = ["zhangsan","lisi","wangwu","zhaoliu"];
+		document.write("return: "+arr17.pop());//删除并返回最后一个元素
+		document.write("new array: "+arr17);
+
+		var arr18 = ["zhangsan1","lisi1","zhaoliu1","niuqi1"];
+		document.write("new array:"+arr18.reverse());//颠倒数组中元素的顺序
+		
 	</script>
 ```
 
