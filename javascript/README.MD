@@ -1,7 +1,33 @@
 # JavaScript
+  - [基本语法](#基本语法)
   - [练习](#练-习)
 
 
+
+
+##基本语法
+### 定义方法
+```html
+<script type="text/javascript">		
+		function test() {
+			alert("qqqqq");
+		}
+		//调用方法
+		test();
+
+		function add1(a,b) {
+			var sum = a+b;
+			alert(sum);		
+		}
+		add1(2,3);
+
+		function add2(a,b,c) {
+			var sum1 = a+b+c;
+			return sum1;
+		}
+		alert(add2(3,4,5));		
+	</script>
+```
 
 ## 练习
 ### [练习1](#答案1)
