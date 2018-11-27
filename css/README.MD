@@ -25,3 +25,12 @@
 <div>其意博</div>
  </body>
 ```
+
+
+### 方式四
+```html
+<head>
+  <title>HTML示例</title>
+  <link rel="stylesheet" type="text/css" href="div.css" />
+ </head>
+```
