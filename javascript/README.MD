@@ -28,6 +28,34 @@
 		}
 		alert(add2(3,4,5));		
 	</script>
+
+<script type="text/javascript">
+ 
+		var str1 = "abc";
+		var str2 = "dfg";
+		document.write(str1.concat(str2));//连接字符串
+
+		var str3 = "abcdefg";
+		document.write(str3.charAt(0)); //返回指定位置的字符
+		document.write(str3.charAt(20)); //位置不存在，返回空字符串("")
+		
+		var str4 = "poiuyt";
+		document.write(str4.indexOf("oiu"));//返回字符串首次出现的位置
+		document.write(str4.indexOf("w")); //字符不存在，返回-1
+
+		var str5 = "a-b-c-d";
+		var arr1 = str5.split("-");//把字符串切割为数组
+		document.write("length: "+arr1.length);
+		
+		var str6 = "abcd";
+		document.write(str6.replace("a","Q"));//替换
+
+		var str7 = "abcdefghuiop";
+		document.write(str7.substr(5,5));  //fghui,从第五位开始，向后截取五个字符
+
+		document.write("<br/>");
+		document.write(str7.substring(3,5)); //de，截取[3,5)位置的字符
+	</script>
 ```
 
 ## String
