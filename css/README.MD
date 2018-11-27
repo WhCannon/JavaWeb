@@ -122,3 +122,40 @@
 <p id="hehe">aaaaaaaaaaaaaaaaaaaaaa</p>
  </body>
 ```
+
+## 扩展选择器
+### 伪类元素选择器
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+
+	/*原始状态*/
+	a:link {
+		background-color: red;
+	}
+
+	/*悬停状态*/
+	a:hover {
+		background-color: green;
+	}
+	/*点击状态*/
+	a:active {
+		background-color: blue;
+	}
+
+	/*点击之后的状态*/
+	a:visited {
+		background-color: gray;
+	}
+
+  </style>
+ </head>
+ <body>
+
+<a href="http://www.sina1.com.cn" target="_blank">CSS概述和与HTML的结合方式超链接一</a>
+
+ </body>
+</html>
+```
