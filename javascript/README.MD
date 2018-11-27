@@ -17,7 +17,7 @@
  </head>
  <body>
 	<script type="text/javascript">
-		document.write("<table border='1' bordercolor='blue'>");
+		document.write("<table border='1' bordercolor='blue'>");//document.write里面是双引号，如果设置标签的属性需要使用单引号
 		//循环行 9
 		for(var i=1;i<=9;i++) {
 			document.write("<tr>");
