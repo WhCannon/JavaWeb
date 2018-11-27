@@ -2,6 +2,7 @@
   - [基本语法](#基本语法)
   - [String](#string)
   - [Array](#array)
+  - [Date](#date)
   - [练习](#练-习)
 
 
@@ -117,7 +118,22 @@
 		
 	</script>
 ```
-
+## Date
+```html
+<script type="text/javascript">
+		var date = new Date();//获取当前时间
+		document.write(date); // Fri Apr 17 10:47:46 UTC+0800 2015 
+		document.write(date.toLocaleString());//转换成本地格式
+		document.write("year: "+date.getFullYear());//获取当前年份
+		document.write("month: "+(date.getMonth()+1));//获取月份
+		document.write("week: "+date.getDay());//获取星期几(0代表星期日,6代表星期六)
+		document.write("day: "+date.getDate());//获取月中的天数
+		document.write("hour: "+date.getHours());//获取小时
+		document.write("minute: "+date.getMinutes());//获取分钟
+		document.write("second: "+date.getSeconds());//获取秒
+		document.write("times: "+date.getTime());//获取毫秒
+	</script>
+```
 
 ## 练习
 ### [练习1](#答案1)
