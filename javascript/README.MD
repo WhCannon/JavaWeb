@@ -4,6 +4,7 @@
   - [Array](#array)
   - [Date](#date)
   - [Math](#math)
+  - [全局函数](#全局函数)
   - [练习](#练-习)
 
 
@@ -146,6 +147,27 @@
 		document.write(Math.random());//0.0-1.0的随机数
 		document.write(Math.floor(Math.random()*10));//0-9的随机数
 		document.write(Math.pow(2,5));//2的5次方
+	</script>
+```
+
+## 全局函数
+```html
+<script type="text/javascript">	
+		var str = "alert('1234');";
+		alert(str);
+		eval(str);//执行js代码（如果字符串是一个js代码，可以用eval直接执行）
+
+		var str1 = "测试中文aaa1234";
+		var encode1 = encodeURI(str1);//对字符编码
+		document.write(encode1);
+		var decode1 = decodeURI(encode1);//对字符解码
+		document.write(decode1);
+
+		var str2 = "aaaa";
+		alert(isNaN(str2));//是否是数字，是数字返回false，不是返回true
+
+		var str3 = "123";
+		document.write(parseInt(str3)+1);//124,把字符串转换成数字
 	</script>
 ```
 
