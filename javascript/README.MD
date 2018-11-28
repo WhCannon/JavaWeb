@@ -5,6 +5,7 @@
   - [Date](#date)
   - [Math](#math)
   - [全局函数](#全局函数)
+  - [函数重载问题](#函数重载问题)
   - [练习](#练-习)
 
 
@@ -168,6 +169,26 @@
 
 		var str3 = "123";
 		document.write(parseInt(str3)+1);//124,把字符串转换成数字
+	</script>
+```
+## 函数重载问题
+```html
+<script type="text/javascript">	
+		function add1() {
+			if(arguments.length == 2) {
+				return arguments[0]+arguments[1];
+			} else if (arguments.length == 3) {
+				return arguments[0]+arguments[1]+arguments[2];
+			} else if (arguments.length == 4) {
+				return arguments[0]+arguments[1]+arguments[2]+arguments[3];
+			} else {
+				return 0;
+			}
+		}
+		alert(add1(1,2)); //3
+		alert(add1(1,2,3)); //6
+		alert(add1(1,2,3,4));  // 10
+		alert(add1(1,2,3,4,5));  // 0
 	</script>
 ```
 
