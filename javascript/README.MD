@@ -299,6 +299,9 @@
 ### [练习3](#练习3)
 在列表末尾添加一个节点
 
+### [练习4](#练习4)
+动态显示时间
+
 ## 答案1
 ```html
 <html>
@@ -446,6 +449,37 @@
 		
 	</script>
 
+ </body>
+</html>
+```
+
+## 答案4
+```html
+得到当前的时间 
+需要让页面每一秒获取时间
+显示到页面上:每一秒向div里面写一次时间,使用innerHTML属性
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+  </style>
+ </head>
+ <body>
+	<div id="times">
+	</div>
+	<script type="text/javascript">
+		function getD1() {
+			//当前时间
+			var date = new Date();
+			//格式化
+			var d1 = date.toLocaleString();
+			//获取div
+			var div1 = document.getElementById("times");
+			div1.innerHTML = d1;
+		}
+		//使用定时器实现每一秒写一次时间
+		setInterval("getD1();",1000);	
+	</script>
  </body>
 </html>
 ```
