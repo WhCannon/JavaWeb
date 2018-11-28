@@ -246,6 +246,15 @@
 ### [练习1](#答案1)
 使用js打印99乘法表
 
+### [练习2](#练习2)
+1、创建一个页面  
+有两个输入项和一个按钮  
+按钮上面有一个事件：弹出一个新窗口 open  
+2、创建弹出页面  
+  表格  
+每一行有一个按钮和编号和姓名  
+按钮上有一个事件：把当前的编号和姓名，赋值到第一个页面相应的位置  
+
 ## 答案1
 ```html
 <html>
@@ -274,4 +283,73 @@
 	</script>
  </body>
 </html>
+```
+
+## 答案2
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+  </style>
+ </head>
+ <body>
+	编号：<input type="text" id="numid"/><br/>
+	姓名：<input type="text" id="nameid"/><br/>
+	<input type="button" value="选择" onclick="open1()"/>
+	<script type="text/javascript">
+		//实现弹出窗口的方法
+		function open1() {
+			//open方法
+			window.open("user.html","","width=250,height=150");
+		}
+	</script>
+ </body>
+</html>
+
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+  </style>
+ </head>
+ <body>
+	<table border="1" bordercolor="blue">
+		<tr>
+			<td>操作</td>
+			<td>编号</td>
+			<td>姓名</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="选择" onclick="s1('100','东方不败');"/></td>
+			<td>100</td>
+			<td>东方不败</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="选择" onclick="s1('101','岳不群');"/></td>
+			<td>101</td>
+			<td>岳不群</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="选择" onclick="s1('102','林平之');"/></td>
+			<td>102</td>
+			<td>林平之</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		//实现s1方法
+		function s1(num1,name1) {
+			//需要把num1和name1赋值到window页面
+			//跨页面的操作  opener：得到创建这个窗口的窗口 得到window页面
+			var pwin = window.opener; //得到window页面
+			pwin.document.getElementById("numid").value = num1;
+			pwin.document.getElementById("nameid").value = name1;
+			//关闭窗口
+			window.close();
+		}
+	</script>
+ </body>
+</html>
+
+
 ```
