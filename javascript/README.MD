@@ -231,6 +231,13 @@
 		var input1 = document.getElementById("nameid");//传的id值
 		alert(input1.name);//得到input里的name值
 		input1.value = "bbbbb";//向input里面设置一个value值
+		
+		//使用getElementsByName得到input标签
+		var inputs = document.getElementsByName("name1");//返回一个集合
+		for(var i=0;i<inputs.length;i++) {
+			var input1 = inputs[i];  //每次循环得到input对象
+			alert(input1.value);    //得到每个input标签里面的value值
+		}
 	</script>
  </body>
 ```
