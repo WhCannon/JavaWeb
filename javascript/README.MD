@@ -246,6 +246,43 @@
 
 ```
 
+### innerHTML
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+		#div11 {
+			width:200px;
+			height:150px;
+			border:2px dashed red;
+		}
+  </style>
+ </head>
+ <body>
+	<span id="sid">哈哈呵呵</span>
+	<div id="div11">
+	</div>
+	<script type="text/javascript">
+		var span1 = document.getElementById("sid");
+		alert(span1.innerHTML);//获取文本内容
+
+		//向div里面设置内容 <h1>AAAAA</h1>
+		var div11 = document.getElementById("div11");
+		div11.innerHTML = "<h1>AAAAA</h1>";//设置内容
+
+		//向div里面添加一个表格
+		//var tab = "<table border='1'><tr><td>aaaaaa</td></tr><tr><td>bbbbbb</td></tr><tr><td>cccccc</td></tr></table>";
+		var tab = "<table>";
+		tab += "</table>";
+		//相当于 var tab = "<table></table>";
+		div11.innerHTML = tab;
+	</script>
+
+ </body>
+</html>
+```
+
 ## 练 习
 ### [练习1](#答案1)
 使用js打印99乘法表
