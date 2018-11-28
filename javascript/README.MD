@@ -6,6 +6,7 @@
   - [Math](#math)
   - [全局函数](#全局函数)
   - [函数重载问题](#函数重载问题)
+  - [bom对象](#bom对象)
   - [练习](#练-习)
 
 
@@ -190,6 +191,29 @@
 		alert(add1(1,2,3,4));  // 10
 		alert(add1(1,2,3,4,5));  // 0
 	</script>
+```
+
+## bom对象
+### history
+```html
+<body>
+	<input type="button" value="back" onclick="back1();"/>
+	<input type="button" value="next" onclick="next1();"/>
+	<h1>BBBBBBBBBBBBBBBBBBBBBBB</h1>
+	<a href="c.html">BBBBBBBB</a>
+	<script type="text/javascript">
+		//到上一个页面
+		function back1() {
+			//history.back();
+			history.go(-1);
+		}
+		//到下一个页面
+		function next1() {
+			//history.forward();
+			history.go(1);
+		}
+	</script>
+ </body>
 ```
 
 ## 练习
