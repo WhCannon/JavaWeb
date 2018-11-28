@@ -3,6 +3,7 @@
   - [String](#string)
   - [Array](#array)
   - [Date](#date)
+  - [Math](#math)
   - [练习](#练-习)
 
 
@@ -132,6 +133,19 @@
 		document.write("minute: "+date.getMinutes());//获取分钟
 		document.write("second: "+date.getSeconds());//获取秒
 		document.write("times: "+date.getTime());//获取毫秒
+	</script>
+```
+
+## Math
+```html
+<script type="text/javascript">
+		var mm = 10.7;
+		document.write("ceil: "+Math.ceil(mm));//向上取整
+		document.write("floor: "+Math.floor(mm));//向下取整	
+		document.write("round: "+Math.round(mm));//四舍五入
+		document.write(Math.random());//0.0-1.0的随机数
+		document.write(Math.floor(Math.random()*10));//0-9的随机数
+		document.write(Math.pow(2,5));//2的5次方
 	</script>
 ```
 
