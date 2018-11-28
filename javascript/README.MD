@@ -7,6 +7,7 @@
   - [全局函数](#全局函数)
   - [函数重载问题](#函数重载问题)
   - [bom对象](#bom对象)
+  - [dom对象](#dom对象)
   - [练习](#练-习)
 
 
@@ -212,6 +213,24 @@
 			//history.forward();
 			history.go(1);
 		}
+	</script>
+ </body>
+```
+
+## dom对象
+### document对象
+```html
+<body>
+	<input type="text" id="nameid" name="name1"/>
+	<script type="text/javascript">
+		var str = "abc";
+		document.write(str);//向页面输出变量
+		document.write("<hr/>");//输出html代码
+
+		//使用getElementById得到input标签
+		var input1 = document.getElementById("nameid");//传的id值
+		alert(input1.name);//得到input里的name值
+		input1.value = "bbbbb";//向input里面设置一个value值
 	</script>
  </body>
 ```
