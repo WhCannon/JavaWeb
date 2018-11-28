@@ -255,6 +255,9 @@
 每一行有一个按钮和编号和姓名  
 按钮上有一个事件：把当前的编号和姓名，赋值到第一个页面相应的位置  
 
+### [练习3](#练习3)
+在列表末尾添加一个节点
+
 ## 答案1
 ```html
 <html>
@@ -350,6 +353,58 @@
 	</script>
  </body>
 </html>
+```
 
+## 答案3
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+	div{
+		width:200px;
+		height:200px;
+		border:2px solid red;
+	}
+  </style>
+ </head>
+ <body>
+ <div>
+	<ul id="ulid">
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+		<li>444</li>
+	</ul>
+</div>
+<div id="div1">
 
+</div>
+	<br/>
+	<input type="button" value="add" onclick="add2();"/>
+	<script type="text/javascript">
+		function add2() {
+			var div1 = document.getElementById("div1");
+			var ul1 = document.getElementById("ulid");
+			div1.appendChild(ul1);
+		}
+
+		//在末尾添加节点
+		function add1() {
+			//获取到ul标签
+			var ul1 = document.getElementById("ulid");
+			//创建标签
+			var li1 = document.createElement("li");
+			//创建文本
+			var tex1 = document.createTextNode("5555");
+			//把文本加入到li下面
+			li1.appendChild(tex1);
+			//把li加入到ul下面
+			ul1.appendChild(li1);
+		}
+		
+	</script>
+
+ </body>
+</html>
 ```
