@@ -302,8 +302,11 @@
 ### [练习4](#练习4)
 动态显示时间
 
-### [练习5](#练习5)
+### [练习5](#答案5)
 全选练习
+
+### [练习6](#答案6)
+左右两个下拉选择框添加
 
 ## 答案1
 ```html
@@ -582,4 +585,102 @@
 	</script>
  </body>
 </html>
+```
+
+## 答案6
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+
+  </style>
+ </head>
+ <body>
+	
+<div id="s1" style="float:left;">
+	<div>
+		<select id="select1" multiple="multiple" style="width:100px;height:100px;">
+			<option>AAAAAAAA</option>
+			<option>BBBBBBBB</option>
+			<option>CCCCCCCC</option>
+			<option>DDDDDDDD</option>
+			<option>EEEEEEEE</option>
+		</select>
+	</div>
+
+	<div>
+		<input type="button" value="选中添加到右边" onclick="selToRight();"/><br/>
+		<input type="button" value="全部添加到右边" onclick="allToRight();"/>
+	</div>
+</div>
+
+<div id="s2">
+	<div>
+		<select id="select2" multiple="multiple" style="width:100px;height:100px;">
+			<option>QQQQQQQQ</option>
+		</select>
+	</div>
+
+	<div>
+		<input type="button" value="选中添加到左边" onclick="selToLeft();"/><br/>
+		<input type="button" value="全部添加到左边" onclick="allToLeft();"/>
+	</div>
+</div>
+
+	<script type="text/javascript">
+	//实现选中添加到右边
+		function selToRight() {
+			/*
+				1、获取select1里面的option
+					- getElementsByTagName()返回是数组
+					- 遍历数组，得到每一个option
+				2、判断option是否被选中
+						** selected= true: 选中
+				3、如果是选中，把选择的添加到右边去
+				4、得到select2
+				4、添加选择的部分
+					- appendChild方法
+			*/
+			//获取select2
+			var select2 = document.getElementById("select2");
+			//得到select1
+			var select1 = document.getElementById("select1");
+			//得到option
+			var options1 = select1.getElementsByTagName("option");
+			//遍历数组
+			for(var i=0;i<options1.length;i++) {//这个数组长度是减小的
+				//alert(i);
+				var option1 = options1[i];//得到每一个option对象
+				//判断是否被选中
+				if(option1.selected == true) {
+					//添加到select2里面
+					select2.appendChild(option1);
+					i--;
+				}
+			}
+		}
+
+		//全部添加到右边
+		function allToRight() {
+			//得到select2
+			var s2 = document.getElementById("select2");
+			//得到select下面的option对象
+			var s1 = document.getElementById("select1");
+			var ops = s1.getElementsByTagName("option");//返回的是数组
+			for(var j=0;j<ops.length;j++) {
+				var op1 = ops[j];
+				s2.appendChild(op1);
+				j--;
+			}
+		}
+
+		//实现全部添加到左边
+
+		//选择添加到左边
+
+	</script>
+ </body>
+</html>
+
 ```
