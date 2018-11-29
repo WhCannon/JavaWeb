@@ -19,3 +19,11 @@ xml文件：
 	<a>1111</a>
 </person>
 ```
+* dtd引入方式
+```xml
+<!DOCTYPE 根元素名称 [
+			<!ELEMENT person (name,age)>
+			<!ELEMENT name (#PCDATA)>
+			<!ELEMENT age (#PCDATA)>
+		]>
+```
