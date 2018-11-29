@@ -308,6 +308,9 @@
 ### [练习6](#答案6)
 左右两个下拉选择框添加
 
+### [练习7](#答案7)
+创建2个下拉框，实现类似选择省市地址的功能
+
 ## 答案1
 ```html
 <html>
@@ -682,5 +685,88 @@
 	</script>
  </body>
 </html>
+```
 
+## 答案7
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+
+  </style>
+ </head>
+ <body>
+	<select id="countryid" onchange="add1(this.value);">
+		<option value="0">--请选择--</option>
+		<option value="中国">中国</option>
+		<option value="美国">美国</option>
+		<option value="德国">德国</option>
+		<option value="日本">日本</option>
+	</select>
+
+	<select id="cityid">
+			
+	</select>
+
+ </body>
+ 	<script type="text/javascript">		
+		//创建一个数组存储数据
+		//二维数组
+		var arr = new Array(4);
+		arr[0] = ["中国","南京","抚州","临洮","日喀则","哈密"];
+		arr[1] = ["美国","华盛顿","底特律","休斯顿","纽约"];
+		arr[2] = ["德国","慕尼黑","柏林","法兰克福","狼堡"];
+		arr[3] = ["日本","东京","北海道","大阪","广岛","长崎"];
+
+		function add1(val) {
+			/*
+				1、遍历二维数组，得到的也是一个数组（国家对应关系）
+				2、拿到数组中的第一个值和传递过来的值做比较
+				3、如果相同，获取到数组后面的元素
+				4、获取city的select
+				5、添加相应的option过去，使用appendChild方法
+					- 需要创建option（三步）
+			*/
+
+			//获取city的select
+			var city1 = document.getElementById("cityid");
+			//添加另一个国家的city之前，判断一下city里面是否有以前的option，如果有，删除
+			//得到city里面的option
+			var options1 = city1.getElementsByTagName("option");
+			//遍历数组
+			for(var m=0;m<options1.length;m++) {
+				//得到每一个option
+				var op = options1[m];
+				//删除这个option 通过父节点删除
+				city1.removeChild(op);//数组长度是变化的
+				m--;
+			}
+
+			//遍历二维数组
+			for(var i=0;i<arr.length;i++) {
+				//得到二维数组里面的每一个数组
+				var arr1 = arr[i];
+				//得到遍历之后的数组的第一个值
+				var firstvalue = arr1[0];
+				//判断传递过来的值和第一个值是否相同
+				if(firstvalue == val) { //相同
+					//得到第一个值后面的元素
+					for(var j=1;j<arr1.length;j++) {
+						var value1 = arr1[j]; //得到城市的名称
+						//创建option
+						var option1 = document.createElement("option");
+						//创建文本
+						var text1 = document.createTextNode(value1);
+						//把文本添加到option1里面
+						option1.appendChild(text1);
+						//添加option1到city1里面
+						city1.appendChild(option1);
+					}
+				}
+			}
+		}
+		
+	</script>
+</html>
 ```
