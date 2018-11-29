@@ -1,6 +1,7 @@
 # xml
   - xml的约束
     - [dtd约束](#dtd约束)
+    - [schema约束](#schema约束)
   - xml解析
     - [jaxp](#jaxp)
           
@@ -32,6 +33,27 @@ xml文件：
 		]>
 ```
 
+### schema约束
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.itcast.cn/20151111"
+elementFormDefault="qualified">
+	<element name="person">
+		<complexType>
+			<sequence>
+			<!-- <all> -->
+			<!-- <choice> -->
+					<element name="name" type="string" maxOccurs="unbounded"></element>
+					<element name="age" type="int"></element>
+			<!-- </choice> -->
+			<!-- </all>	 -->
+			</sequence>
+			<attribute name="id1" type="int" use="required"></attribute>
+		</complexType>
+	</element>
+</schema>
+```
 
 ## xml解析
 ### jaxp
