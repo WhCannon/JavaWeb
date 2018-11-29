@@ -1,7 +1,10 @@
 # xml
   - xml的约束
     - [dtd约束](#dtd约束)
-    - [练习](#练-习)
+  - xml解析
+    - [jaxp](#jaxp)
+          
+  - [练习](#练-习)
   
 
 ## xml的约束
@@ -28,6 +31,57 @@ xml文件：
 			<!ELEMENT age (#PCDATA)>
 		]>
 ```
+
+
+## xml解析
+### jaxp
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<person>
+	<p1>
+		<name>zhangsan</name>
+		<age>20</age>	
+	</p1>
+	<p1>
+		<name>lisi</name>
+		<age>30</age>
+	</p1>
+</person>
+```
+通过jaxp解析：
+```java
+public class TestJaxp {
+
+	public static void main(String[] args) throws Exception {
+		//selectAll();
+		//selectSin();
+		//addSex();
+		//modifySex();
+		//delSex();
+		listElement();
+	}
+
+//查询所有name元素的值
+	private static void selectAll() throws Exception {
+		//查询所有name元素的值
+
+		//创建解析器工厂    
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		//创建解析器
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		//解析xml返回document
+		Document document = builder.parse("src/person.xml");
+		//得到name元素
+		NodeList list = document.getElementsByTagName("name");
+		for(int i=0;i<list.getLength();i++) {
+			Node name1 = list.item(i); 
+			//得到name元素里面的值
+			String s = name1.getTextContent();
+			System.out.println(s);
+		}
+	}
+```
+
 
 ## 练 习
 ### [练习1](答案1)
