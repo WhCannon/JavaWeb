@@ -35,6 +35,19 @@ xml文件：
 
 ### schema约束
 ```xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.itcast.cn/20151111"
+xsi:schemaLocation="http://www.itcast.cn/20151111 1.xsd" id1="123">
+	
+	<name>zhangsan</name>
+	<name>zhangsan</name>
+	<name>zhangsan</name>
+	<age>20</age> 
+</person>
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 targetNamespace="http://www.itcast.cn/20151111"
