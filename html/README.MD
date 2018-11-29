@@ -110,6 +110,33 @@
  </body>
 </html>
 ```
+* 表单提交方式
+```html
+使用submit提交  
+<form>
+ .....
+ <input type="submit" />
+</form>
+
+使用button提交表单
+<form id="form1" >
+		<input type="text" name="username"/>
+		<br/>
+		<input type="button" value="提交" onclick="form1();"/>
+</form>
+	//实现提交方法
+	function form1() {
+		//获取form
+		var form1 = document.getElementById("form1");
+		//设置action
+		form1.action = "hello.html";
+		//提交form表单
+		form1.submit();
+		}
+
+使用超链接提交
+<a href="hello.html?username=123456">使用超链接提交</a>
+```
 
 ### 框架标签
 ```html
