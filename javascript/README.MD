@@ -302,6 +302,9 @@
 ### [练习4](#练习4)
 动态显示时间
 
+### [练习5](#练习5)
+全选练习
+
 ## 答案1
 ```html
 <html>
@@ -479,6 +482,103 @@
 		}
 		//使用定时器实现每一秒写一次时间
 		setInterval("getD1();",1000);	
+	</script>
+ </body>
+</html>
+```
+
+## 答案5
+```html
+<html>
+ <head>
+  <title>HTML示例</title>
+  <style type="text/css">
+
+  </style>
+ </head>
+ <body>
+	<input type="checkbox" id="boxid" onclick="selAllNo();"/>全选/全不选
+	<br/>
+	<input type="checkbox" name="love"/>篮球
+	<input type="checkbox" name="love"/>排球
+	<input type="checkbox" name="love"/>羽毛球
+	<input type="checkbox" name="love"/>乒乓球
+	<br/>
+	<input type="button" value="全选" onclick="selAll();"/>
+	<input type="button" value="全不选" onclick="selNo();"/>
+	<input type="button" value="反选" onclick="selOther();"/>
+	<script type="text/javascript">
+		//实现全选和全不选
+		function selAllNo() {
+			/*
+				1、得到上面那个复选框
+					- 通过id获取到
+				2、判断这个复选框是否是选中
+					- if条件，checked==true
+				3、如果是选中，下面是全选
+				4、如果不是选中，下面是全不选
+			*/
+			var box1 = document.getElementById("boxid");
+			if(box1.checked == true) { //是选择状态
+				//调用全选方法
+				selAll();
+			} else { //不是选中状态
+				//调用全不选方法
+				selNo();
+			}
+		}	
+
+		//实现全选的操作
+		function selAll() {
+			/*
+				1、获取要操作的复选框 
+					- 使用getElementsByName()
+				2、返回是数组，
+					- 属性 checked判断复选框是否选中
+						*** checked = true; //表示选中
+						*** checked = false;//表示不选中
+					- 遍历数组，得到的是每一个checkbox
+						* 把每一个checkbox属性checked=true					
+			*/
+			//获取要操作的复选框
+			var loves = document.getElementsByName("love");
+			//遍历数组，得到每一个复选框
+			for(var i=0;i<loves.length;i++) {
+				var love1 = loves[i]; //得到每一个复选框
+				//设置属性是true
+				love1.checked = true;
+			}
+		}
+
+
+		//实现全不选的操作
+				function selNo() {
+					var loves1 = document.getElementsByName("love");
+					for(var j=0;j<loves1.length;j++) {
+						var love1 = loves1[j];
+						love1.checked = false;
+					}
+				}
+
+		//实现反选的操作
+		function selOther() {
+			/*判断当前的复选框是选中还是不选中
+					- if(love1.checked == true) {}
+			 如果选中，属性checked设置成false，否则，设置成true
+			*/
+			var loves11 = document.getElementsByName("love");
+			for(var a=0;a<loves11.length;a++) {
+				var love11 = loves11[a];
+				//判断当前这个复选框是什么状态
+				if(love11.checked == true) { //是选中的状态
+					//设置checked=false
+					love11.checked = false;
+				} else { //是不选中的状态
+					//把checked=true
+					love11.checked = true;
+				}
+			}
+		}	
 	</script>
  </body>
 </html>
