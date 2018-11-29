@@ -136,6 +136,24 @@
 
 使用超链接提交
 <a href="hello.html?username=123456">使用超链接提交</a>
+
+<input type="text" id="id1" name="text1" value="please input" onfocus="focus1();" onblur="blur1();"/>
+ </body>
+ 
+ <script type="text/javascript">
+	//得到焦点
+	function focus1() {
+		//alert("foucus.");
+		var input1 = document.getElementById("id1");
+		input1.value = "";
+	}
+
+	//失去焦点
+	function blur1() {
+		//alert("blur.");
+		var input1 = document.getElementById("id1");
+		input1.value = "please input";
+	}
 ```
 
 ### 框架标签
