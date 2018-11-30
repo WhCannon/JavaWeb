@@ -257,6 +257,27 @@ Document document = reader.read(url);
 ```
 * 解析过程
 ```java
+//查询xml中所有name元素的值
+	public static void selectName() throws Exception {
+		//创建解析器
+		SAXReader saxReader = new SAXReader();
+		//得到document
+		Document document = saxReader.read("src/p1.xml");
+		//得到根节点
+		Element root = document.getRootElement();
+		
+		//得到p1
+		List<Element> list = root.elements("p1");
+		//遍历list
+		for (Element element : list) {
+			//得到p1下面的name元素
+			Element name1 = element.element("name");
+			//得到name里面的值
+			String s = name1.getText();
+			System.out.println(s);
+		}
+	}
+	
 
 ```
 
