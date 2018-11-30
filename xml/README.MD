@@ -277,7 +277,7 @@ Document document = reader.read(url);
 			System.out.println(s);
 		}
 	}
-	
+//在第一个p1标签末尾添加一个元素 <sex>nv</sex>	
 public static void addSex() throws Exception {
 		//创建解析器
 //		SAXReader reader = new SAXReader();
