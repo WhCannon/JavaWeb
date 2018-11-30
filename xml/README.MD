@@ -234,10 +234,13 @@ public class TestJaxp {
 	}
 ```
 ## dom4j
+* 得到Document对象：
 ```java
-得到Document对象：
 SAXReader reader = new SAXReader();
 Document document = reader.read(url);
+```
+* 使用dom4j对xml进行增删改查
+```java
 
 ```
 
