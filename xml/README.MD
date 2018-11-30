@@ -278,7 +278,29 @@ Document document = reader.read(url);
 		}
 	}
 	
-
+public static void addSex() throws Exception {
+		//创建解析器
+//		SAXReader reader = new SAXReader();
+		//得到document
+//		Document document = reader.read("src/p1.xml");
+		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到第一个p1元素
+		Element p1 = root.element("p1");
+		//在p1下面直接添加元素
+		Element sex1 = p1.addElement("sex");
+		//在sex下面添加文本
+		sex1.setText("nv");
+		
+		//回写xml
+//		OutputFormat format = OutputFormat.createPrettyPrint(); //写入格式，带缩进的效果
+//		OutputFormat format = OutputFormat.createCompactFormat();
+//		XMLWriter  xmlWriter = new XMLWriter(new FileOutputStream("src/p1.xml"), format);
+//		xmlWriter.write(document);
+//		xmlWriter.close();
+		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+	}
 ```
 
 ## 练 习
