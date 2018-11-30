@@ -397,9 +397,11 @@ public class Dom4jUtils {
 ```
 
 ## 练 习
-### [练习1](答案1)
+### [练习1](#答案1)
 根据DTD约束写xml文件
 
+### [练习2](#答案2)
+实现学生管理系统，使用xml存储数据
 
 ## 答案1
 ```xml
@@ -442,7 +444,25 @@ public class Dom4jUtils {
 		</DAY>
 	</CHANNEL>
 </TVSCHEDULE>
+```
 
-
+## 答案2
+* 学生数据xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<sudent> 
+  <stu> 
+    <id>100</id>  
+    <name>zhangsan</name>  
+    <age>20</age> 
+  </stu>  
+  <stu> 
+    <id>101</id>  
+    <name>lisi</name>  
+    <age>30</age> 
+  </stu> 
+</sudent>
+```
+```java
 
 ```
