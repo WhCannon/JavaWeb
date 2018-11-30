@@ -301,6 +301,34 @@ public static void addSex() throws Exception {
 //		xmlWriter.close();
 		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
 	}
+	
+//在第一个p1下面的age标签之前添加 <school>ecit.edu.cn</schlool>
+	public static void addAgeBefore() throws Exception {
+		//创建解析器
+//		SAXReader saxReader = new SAXReader();
+		//得到document
+//		Document document = saxReader.read("src/p1.xml");
+		
+		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+		//得到根节点
+		Element root = document.getRootElement();
+		//获取到第一个p1
+		Element p1 = root.element("p1");
+		//获取p1下面的所有元素
+		List<Element> list = p1.elements();
+		//创建元素 使用
+		Element school = DocumentHelper.createElement("school");
+		//在school下面创建文本
+		school.setText("ecit");	
+		//在特定位置添加
+		list.add(1, school);
+		//回写xml
+		/*OutputFormat format = OutputFormat.createPrettyPrint();
+		XMLWriter xmlWriter = new XMLWriter(new FileOutputStream("src/p1.xml"), format);
+		xmlWriter.write(document);
+		xmlWriter.close();*/
+		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+	}
 ```
 
 ## 练 习
