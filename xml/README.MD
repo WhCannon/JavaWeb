@@ -371,6 +371,28 @@ public class Dom4jUtils {
 		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
 	}
 	
+//删除第一个p1下面的<school>ecit</school>元素
+	public static void delSch() throws Exception {
+		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+		Element root = document.getRootElement();
+		Element p1 = root.element("p1");
+		//得到p1下面的school标签
+		Element sch = p1.element("school");
+		//删除school元素，通过父节点删除 
+		p1.remove(sch);
+		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+	}
+	
+//获取第一个p1里面的属性id1的值
+	public static void getValues() throws Exception {
+		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+		Element root = document.getRootElement();
+		Element p1 = root.element("p1");
+		//得到p1里面的属性值
+		String value = p1.attributeValue("id1");
+		System.out.println(value);
+	}
+	
 
 ```
 
