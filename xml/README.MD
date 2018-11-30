@@ -4,6 +4,7 @@
     - [schema约束](#schema约束)
   - xml解析
     - [jaxp](#jaxp)
+    - [dom4j](#dom4j)
           
   - [练习](#练-习)
   
@@ -232,7 +233,13 @@ public class TestJaxp {
 		}
 	}
 ```
+## dom4j
+```java
+得到Document对象：
+SAXReader reader = new SAXReader();
+Document document = reader.read(url);
 
+```
 
 ## 练 习
 ### [练习1](答案1)
