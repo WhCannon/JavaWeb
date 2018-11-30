@@ -329,6 +329,35 @@ public static void addSex() throws Exception {
 		xmlWriter.close();*/
 		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
 	}
+//dom4j里封装方法	
+public class Dom4jUtils {	
+	public static final String PATH = "src/p1.xml";
+	//返回document
+	public static Document getDocument(String path) {
+		try {
+			//创建解析器
+			SAXReader reader = new SAXReader();
+			//得到document
+			Document document = reader.read(path);
+			return document;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	//回写xml的方法
+	public static void xmlWriters(String path,Document document) {
+		try {
+			OutputFormat format = OutputFormat.createPrettyPrint();
+			XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(path), format);
+			xmlWriter.write(document);
+			xmlWriter.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
 ```
 
 ## 练 习
