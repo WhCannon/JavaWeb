@@ -358,6 +358,20 @@ public class Dom4jUtils {
 		}
 	}
 }
+
+//修改第一个p1下面的age元素的值 <age>30</age>
+	public static void modifyAge() throws Exception {
+		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+		Element root = document.getRootElement();
+		Element p1 = root.element("p1");
+		//得到p1下面的age
+		Element age = p1.element("age");
+		//修改age的值
+		age.setText("300");
+		Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+	}
+	
+
 ```
 
 ## 练 习
