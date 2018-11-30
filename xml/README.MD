@@ -239,7 +239,23 @@ public class TestJaxp {
 SAXReader reader = new SAXReader();
 Document document = reader.read(url);
 ```
-* 使用dom4j对xml进行增删改查
+### 使用dom4j对xml进行增删改查
+* xml文件
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<person> 
+  <p1 id1="aaaa"> 
+    <name>zhangsan</name>  
+    <age>300</age>  
+    <sex>nv</sex> 
+  </p1>  
+  <p1> 
+    <name>lisi</name>  
+    <age>30</age> 
+  </p1> 
+</person>
+```
+* 解析过程
 ```java
 
 ```
