@@ -3,6 +3,7 @@
   - [ServletConfig](#servletconfig)
   - [GenericServlet](#genericservlet)
   - [ServletContext](#servletcontext)
+  - [练习](#练-习)
 
 
 ## Servlet接口
@@ -160,4 +161,42 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
   </context-param>
  </web-app>
 
+```
+
+
+## 练 习
+### [练习1](#答案1)
+统计网站的访问量，一个项目中所有的资源被访问都要对访问量进行累加！
+
+
+
+## 答案1
+```java
+创建一个int类型的变量，用来保存访问量，然后把它保存到ServletContext的域中，这样可以保存所有的Servlet都可以访问到！
+最初时，ServletContext中没有保存访问量相关的属性；
+当本站第一次被访问时，创建一个变量，设置其值为1；保存到ServletContext中；
+当以后的访问时，就可以从ServletContext中获取这个变量，然后在其基础之上加１。
+
+获取ServletContext对象，查看是否存在名为count的属性，
+  如果存在，说明不是第一次访问，如果不存在，说明是第一次访问；
+第一次访问：调用Servletcontext的setAttribute()传递一个属性，名为count，值为1；
+第2~N次访问：调用ServletContext的getAttribute()方法获取原来的访问量，给访问量加1，
+            再调用Servletcontext的setAttribute()方法完成设置。
+
+public class AServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ServletContext app = this.getServletContext();
+		Integer count = (Integer)app.getAttribute("count");
+		if(count == null) {
+			app.setAttribute("count", 1);
+		} else {
+			app.setAttribute("count", count+1);
+		}
+		
+		//	向浏览器输出 需要使用响应对象！
+		PrintWriter pw = response.getWriter();
+		pw.print("<h1>" + count + "</h1>");
+	}
+}
 ```
