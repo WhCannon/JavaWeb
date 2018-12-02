@@ -4,6 +4,7 @@
 
 
 ## Servlet接口
+### 接口中的5个方法
 ```java
 public class AServlet implements Servlet {
 
@@ -46,4 +47,17 @@ public class AServlet implements Servlet {
 		return "我是一个快乐的Servlet";
 	}
 }
+```
+
+### 浏览器访问Servlet
+```xml
+<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>cn.itcast.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/helloworld</url-pattern>
+	</servlet-mapping>  
+
 ```
