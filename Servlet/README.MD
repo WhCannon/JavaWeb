@@ -1,6 +1,6 @@
 # Servlet
   - [Servlet接口](#servlet接口)
-
+  - [ServletConfig](#servletConfig)
 
 
 ## Servlet接口
@@ -59,5 +59,22 @@ public class AServlet implements Servlet {
 		<servlet-name>hello</servlet-name>
 		<url-pattern>/helloworld</url-pattern>
 	</servlet-mapping>  
+
+```
+
+## ServletConfig
+```xml
+ <servlet>
+    <servlet-name>One</servlet-name>
+    <servlet-class>cn.itcast.servlet.OneServlet</servlet-class>
+    <init-param>
+      	<param-name>paramName1</param-name>
+    	    <param-value>paramValue1</param-value>
+    </init-param>
+    <init-param>
+    	    <param-name>paramName2</param-name>
+    	    <param-value>paramValue2</param-value>
+    </init-param>
+  </servlet>
 
 ```
