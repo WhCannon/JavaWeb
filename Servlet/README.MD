@@ -148,6 +148,16 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
     ServletContext context = this.getServletContext();
 }
 }
+```
 
+* 配置初始化参数
+```xml
+<web-app ...>
+  ...
+  <context-param>
+	<param-name>paramName1</param-name>
+	<param-value>paramValue1</param-value>  	
+  </context-param>
+ </web-app>
 
 ```
