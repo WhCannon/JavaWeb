@@ -2,6 +2,7 @@
   - [Servlet接口](#servlet接口)
   - [ServletConfig](#servletconfig)
   - [GenericServlet](#genericservlet)
+  - [ServletContext](#servletcontext)
 
 
 ## Servlet接口
@@ -129,5 +130,24 @@ public abstract class GenericServlet implements Servlet, ServletConfig,
         return config.getServletName();
     }
 }
+
+```
+
+## ServletContext
+```java
+在Servlet中获取ServletContext对象：
+public class MyServlet implements Servlet {
+public void init(ServletConfig config) {
+    ServletContext context = config.getServletContext();
+}
+…
+}
+在GenericeServlet或HttpServlet中获取ServletContext对象：
+public class MyServlet extends HttpServlet {
+public void doGet(HttpServletRequest request, HttpServletResponse response) {
+    ServletContext context = this.getServletContext();
+}
+}
+
 
 ```
