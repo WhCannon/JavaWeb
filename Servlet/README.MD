@@ -4,6 +4,7 @@
   - [GenericServlet](#genericservlet)
   - [ServletContext](#servletcontext)
   - [response](#response)
+  - [request](#request)
   - [练习](#练-习)
 
 
@@ -206,6 +207,9 @@ response.getWriter().print("hello hello!");
 	}
 }
 ```
+
+## request
+
 
 ## 练 习
 ### [练习1](#答案1)
