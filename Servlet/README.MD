@@ -180,6 +180,18 @@ public class BServlet extends HttpServlet {
 	}
 }
 ```
+* 定时刷新（定时重定向）
+```java
+public class DServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		PrintWriter writer = response.getWriter();
+		writer.print("欢迎XXX登录！5秒钟后会自动跳转到主页！您看到的一定是乱码！");
+		response.setHeader("Refresh", "5;URL=/day10_1/EServlet");
+	}
+}
+```
 
 ## 练 习
 ### [练习1](#答案1)
