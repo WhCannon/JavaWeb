@@ -23,4 +23,22 @@ public void fun1() { //定义方法
   out.print(this.a++);//输出成员变量
   fun1(); //调用方法
 %>
+
+  
+<table border="1" align="center" width="60%">
+	<tr>
+		<td>姓名</td>
+		<td>年龄</td>
+	</tr>
+<% 
+	for(int i = 0; i < 10; i++) {
+%>	
+	<tr>
+		<td>张三</td>
+		<td>29</td>
+	</tr>
+<%
+	}
+%>
+</table>
 ```
