@@ -192,6 +192,20 @@ public class DServlet extends HttpServlet {
 	}
 }
 ```
+* 禁用浏览器缓存
+```java
+public class FServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+ //Cache-Control、pragma、expires
+response.setHeader("Cache-Control", "no-cache");
+response.setHeader("pragma", "no-cache");
+response.setDateHeader("expires", -1);
+response.getWriter().print("hello hello!");
+	}
+}
+```
 
 ## 练 习
 ### [练习1](#答案1)
