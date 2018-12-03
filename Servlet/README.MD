@@ -3,6 +3,7 @@
   - [ServletConfig](#servletconfig)
   - [GenericServlet](#genericservlet)
   - [ServletContext](#servletcontext)
+  - [response](#response)
   - [练习](#练-习)
 
 
@@ -163,10 +164,29 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
 ```
 
+## response
+* 重定向
+```java
+public class BServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("BServlet");
+		
+		response.setHeader("Location", "/day10_1/CServlet");//设置Location
+		response.setStatus(302);//发送302状态码
+		
+		//快捷的重定向方法
+		response.sendRedirect("/day10_1/CServlet");
+	}
+}
+```
 
 ## 练 习
 ### [练习1](#答案1)
 统计网站的访问量，一个项目中所有的资源被访问都要对访问量进行累加！
+
+### [练习2](#答案2)
+
 
 
 
@@ -199,4 +219,9 @@ public class AServlet extends HttpServlet {
 		pw.print("<h1>" + count + "</h1>");
 	}
 }
+```
+
+## 答案2
+```java
+
 ```
