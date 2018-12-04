@@ -1,5 +1,6 @@
 # JSP
   - [3种java脚本](#3中java脚本)
+  - [Cookie](#cookie)
   - [练习](#练-习)
 
 
@@ -42,6 +43,32 @@ public void fun1() { //定义方法
 	}
 %>
 </table>
+```
+
+## Cookie
+```jsp
+ <body>
+<h1>保存Cookie</h1>
+<%
+	Cookie cookie1 = new Cookie("aaa", "AAA");
+	response.addCookie(cookie1);
+	
+	Cookie cookie2 = new Cookie("bbb", "BBB");
+	response.addCookie(cookie2);
+%>
+  </body>
+  
+<body>
+<h1>获取Cookie</h1>
+<%
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null) {
+		for(Cookie c : cookies) {
+			out.print(c.getName() + "=" + c.getValue() + "<br/>");
+		}
+	}
+%>
+  </body>
 ```
 
 ## 练 习
