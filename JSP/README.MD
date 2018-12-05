@@ -2,6 +2,7 @@
   - [3种java脚本](#3中java脚本)
   - [Cookie](#cookie)
   - [JSP指令](#jsp指令)
+  - [JSP内置对象](#jsp内置对象)
   - [练习](#练-习)
 
 
