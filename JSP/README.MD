@@ -73,6 +73,22 @@ public void fun1() { //定义方法
   </body>
 ```
 
+## JSP指令
+```xml
+<error-page>
+  	<error-code>404</error-code>
+  	<location>/error/errorPage.jsp</location>
+      </error-page>
+      <error-page>
+        <error-code>500</error-code>
+        <location>/error/errorPage.jsp</location>
+      </error-page>
+      <error-page>
+        <exception-type>java.lang.RuntimeException</exception-type>
+        <location>/index.jsp</location>
+      </error-page>
+```
+
 ## 练 习
 ### [练习1](#答案1)
 演示jsp与Servlet的分工
