@@ -45,4 +45,12 @@ for(int i = 1; i <= 10; i++) {
     ...
   }
 
+遍历数组、集合
+<c:forEach items="${strs }" var="str">
+ ${str }<br/>
+</c:forEach>
+等同于
+for(String str : strs) {
+  ...
+}
 ```
