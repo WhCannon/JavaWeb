@@ -35,6 +35,14 @@ ${fn:escapeXml("<html></html>")}<br/> <!-- <html></html> -->
 ```
 
 ## core标签库
+* foreach
 ```jsp
+<c:forEach var="i" begin="1" end="10">
+    ${i}
+</c:forEach>
+相当于
+for(int i = 1; i <= 10; i++) {
+    ...
+  }
 
 ```
