@@ -9,3 +9,4 @@
   - [Servlet](https://github.com/WhCannon/JavaWeb/tree/master/Servlet/README.MD)
   - [JSP](https://github.com/WhCannon/JavaWeb/tree/master/JSP/README.MD)
   - [Session](https://github.com/WhCannon/JavaWeb/tree/master/Session/README.MD) 
+  - [JavaBean](https://github.com/WhCannon/JavaWeb/tree/master/JavaBean/README.MD) 
