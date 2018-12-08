@@ -3,6 +3,7 @@
   - [EL函数库](#EL函数库)
 # JSTL
   - [core标签库](#core标签库)
+# [自定义标签](#自定义标签)
 
 
 ## javabean导航
@@ -53,4 +54,14 @@ for(int i = 1; i <= 10; i++) {
 for(String str : strs) {
   ...
 }
+```
+
+## 自定义标签
+```jsp
+  <tag>
+  	<name>myTag1</name> 指定当前标签的名称
+  	<tag-class>cn.itcast.tag.MyTag1</tag-class> 指定当前标签的标签处理类！
+  	<body-content>empty</body-content> 指定标签体的类型，我们这里使用的是空标签！
+  </tag>
+
 ```
