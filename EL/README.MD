@@ -57,6 +57,23 @@ for(String str : strs) {
 ```
 
 ## 自定义标签
+标签处理类
+```java
+/**
+ * SimpleTagSupport它实现了SimpleTag接口。
+ *   它已经把所有的tomcat传递的数据都保存起来了！而且还提供了get方法供子类调用！
+ * @author cxf
+ *
+ */
+public class MyTag2 extends SimpleTagSupport {
+	@Override
+	public void doTag() throws JspException, IOException {
+		this.getJspContext().getOut().print("再 Hello 一次 Tag!");
+	}
+}
+
+```
+tld文件
 ```jsp
   <tag>
   	<name>myTag1</name> 指定当前标签的名称
