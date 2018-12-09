@@ -85,10 +85,15 @@ tld文件
 
 带属性的标签
 ```java
-  	<attribute>
-  		<name>test</name> 指定属性名
-  		<required>true</required> 指定属性是否为必需的
-  		<rtexprvalue>true</rtexprvalue> 指定属性是否可以使用EL
-  	</attribute>
+<tag> 
+		<name>if</name> 
+		<tag-class>cn.itcast.tag.IfTag</tag-class> 
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>test</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute> 
+</tag>
 
 ```
