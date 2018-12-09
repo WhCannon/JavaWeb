@@ -100,5 +100,11 @@ Domain实体类：
     > username
     > password
     > verifyCode
+    
+数据库users.xml
+    <users>
+      <user username="xxx" password="xxx"/>
+      <user username="xxx" password="xxx"/>
+    </users>
 ```
-* 
+* 简单的数据库设计
