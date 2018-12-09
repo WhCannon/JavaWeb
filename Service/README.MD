@@ -134,3 +134,20 @@ Domain实体类：
   * 添加根元素<users>
   * 保证文件为utf-8编码！！
 ```
+* 注册
+```java
+regist.jsp
+  > 第一步：完成regist.jsp的基本功能！
+RegistServlet
+  > 封装表单数据，封装到User对象中。
+  > 调用service的regist()方法
+    * 如果这个方法没有出问题，输出“注册成功”
+    * 如果这个方法抛出了异常，把错误信息保存到request域，转发到regist.jsp(显示错误信息)
+UserService#regist()
+  > 没有返回值，但注册失败抛出一个自定义的异常！可以在异常中添加异常信息！(自定义一个异常类)
+  > 校验用户名是否已被注册（通过用户名查询用户），如果已被注册，抛出异常，异常信息为“用户名已被注册！”
+  > 添加用户
+UserDao：通过业务分析，得到结果：需要提供两个方法
+  > 按用户名查询用户对象：User findByUsername(String username)
+  > 插入一个用户到数据库中：void add(User user)
+```
