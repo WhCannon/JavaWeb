@@ -150,4 +150,19 @@ UserService#regist()
 UserDao：通过业务分析，得到结果：需要提供两个方法
   > 按用户名查询用户对象：User findByUsername(String username)
   > 插入一个用户到数据库中：void add(User user)
+
+编写过程：
+1. 在service层添加一个UserException
+2. dao；
+  * User findByUsername(String username)
+  * void add(User user)
+3. service
+  * void regist() throws UserException
+
+4. servlet
+  1). 封装表单数据到User对象中
+  2). 使用user调用service的regist()方法
+    3). 如果得到UserException，那么把异常信息保存到request域中，转发回regist.jsp，（数据的回显）
+    4). 输出“注册成功”
+
 ```
