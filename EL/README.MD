@@ -82,3 +82,13 @@ tld文件
   </tag>
 
 ```
+
+带属性的标签
+```java
+  	<attribute>
+  		<name>test</name> 指定属性名
+  		<required>true</required> 指定属性是否为必需的
+  		<rtexprvalue>true</rtexprvalue> 指定属性是否可以使用EL
+  	</attribute>
+
+```
