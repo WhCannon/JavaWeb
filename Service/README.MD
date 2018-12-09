@@ -95,7 +95,7 @@ Service：
 Dao：
   * UserDao --> 与用户相关的数据类
 
-Domain：
+Domain实体类：
   * User（对应数据库，还要对应所有表单）
     > username
     > password
