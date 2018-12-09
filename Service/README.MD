@@ -57,5 +57,22 @@ public class UserService {
 		return userDao.find();
 	}
 }
-
+```
+Servlet
+```java
+public class UserServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/*
+		 * 在servlet中依赖service，然后通过service完成功能，把结果保存到request中
+		 * 转发到jsp显示。
+		 */
+		UserService userService = new UserService();
+		User user = userService.find();
+		
+		request.setAttribute("user", user);
+		
+		request.getRequestDispatcher("/show.jsp").forward(request, response);
+	}
+}
 ```
