@@ -1,5 +1,6 @@
 # JavaWeb项目的三层架构
   - [入门-三层HelloWorld](#三层helloworld)
+  - [案例：用户注册登录](#用户注册登录)
   
   
 ## 三层HlloWorld
@@ -76,3 +77,5 @@ public class UserServlet extends HttpServlet {
 	}
 }
 ```
+
+## 用户注册登录
