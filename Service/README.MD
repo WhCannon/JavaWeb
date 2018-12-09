@@ -107,4 +107,30 @@ Domain实体类：
       <user username="xxx" password="xxx"/>
     </users>
 ```
-* 简单的数据库设计
+* 项目步骤
+```java
+1. 创建空项目
+2. 导包：
+  * CommonUtils
+  * commons-beanutils.jar
+  * commons-logging.jar
+  * dom4j
+3. 建包
+  * cn.itcast.user.domain
+    > User
+  * cn.itcast.user.dao
+    > UserDao
+  * cn.itcast.user.service
+    > UserService
+  * cn.itcast.user.web.servlet
+    > LoginServlet
+    > RegistServlet
+4. jsp
+  * login.jsp
+  * regist.jsp
+  * index.jsp
+
+5. 在F盘下创建一个users.xml文件！
+  * 添加根元素<users>
+  * 保证文件为utf-8编码！！
+```
