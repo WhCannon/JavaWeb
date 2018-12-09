@@ -79,3 +79,26 @@ public class UserServlet extends HttpServlet {
 ```
 
 ## 用户注册登录
+```java
+JSP：
+  * login.jsp  --> 登录表单
+  * regist.jsp --> 注册表单
+  * index.jsp -->  主页(只有登录成功才能看到)
+
+Servlet：
+  * LoginServlet
+  * RegistServlet
+
+Service：
+  * UserService --> 与用户相关的业务类
+
+Dao：
+  * UserDao --> 与用户相关的数据类
+
+Domain：
+  * User（对应数据库，还要对应所有表单）
+    > username
+    > password
+    > verifyCode
+```
+* 
