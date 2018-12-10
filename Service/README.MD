@@ -165,25 +165,38 @@ UserDao：通过业务分析，得到结果：需要提供两个方法
   4). 注册成功，输出“注册成功”
   
 给注册添加验证码
-
 1. VerifyCode类
   * BufferedImage getImage() --> 获取随机的验证码图片
   * String getText() --> 获取图片上的文本
   * static output(BfferedImage, OutputStream) --> 把图片写入到指定的输出流中。
-
 2. VerifyCodeServlet
   * 获取随机验证码图片
   * 把验证码图片上的文本保存到session中
   * 把图片响应到response的outputStream中
-
 3. regist.jsp
   * 添加<img src="指向Servlet" />
   * 添加一个文本框，用来输入验证码
   * “看不清，换一张”，是一个超链接。把上面的<img>的src重新再次指向Servlet！为了处理浏览器的缓存，需要使用时间来做参数！
-
 4. 修改RegistServlet
   * 校验验证码！
   * 错误：保存表单数据到request域、保存错误信息到request域，转发回regist.jsp
   * 正确：什么都不做，向下执行原来代码！
 
+登录功能
+页面：login.jsp --> 登录表单！
+LoginServlet --> 
+  1. 获取表单数据，封装到User中
+  2. 调用service的login()方法，传递form过去！
+  3. 如果service的login()方法，没有抛出异常！返回一个User对象！
+  4. 有异常：获取异常信息，保存到request域，保存form，转发到login.jsp
+  5. 没异常：保存返回的user对象到session中！！！重定向到welcome.jsp(显示当前用户信息！)
+UserService#login()
+  public User login(User form) {...}
+  1. 使用用户名查询数据库，得到返回的User
+    > 返回为null，抛出异常，异常信息为（用户名不存在）
+    > 返回不为null，获取查询出来的user的password与form的password进行比较！如果不同：抛出异常（密码错误！）\
+    > 如果相同，返回查询结果！
+
+UserDao
+  1. 通过用户名查询用户！(已经存在了，不用再写了！)
 ```
