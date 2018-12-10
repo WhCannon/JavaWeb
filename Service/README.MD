@@ -163,4 +163,27 @@ UserDao：通过业务分析，得到结果：需要提供两个方法
   2). 使用user调用service的regist()方法
   3). 如果得到UserException，那么把异常信息保存到request域中，转发回regist.jsp，（数据的回显）
   4). 注册成功，输出“注册成功”
+  
+给注册添加验证码
+
+1. VerifyCode类
+  * BufferedImage getImage() --> 获取随机的验证码图片
+  * String getText() --> 获取图片上的文本
+  * static output(BfferedImage, OutputStream) --> 把图片写入到指定的输出流中。
+
+2. VerifyCodeServlet
+  * 获取随机验证码图片
+  * 把验证码图片上的文本保存到session中
+  * 把图片响应到response的outputStream中
+
+3. regist.jsp
+  * 添加<img src="指向Servlet" />
+  * 添加一个文本框，用来输入验证码
+  * “看不清，换一张”，是一个超链接。把上面的<img>的src重新再次指向Servlet！为了处理浏览器的缓存，需要使用时间来做参数！
+
+4. 修改RegistServlet
+  * 校验验证码！
+  * 错误：保存表单数据到request域、保存错误信息到request域，转发回regist.jsp
+  * 正确：什么都不做，向下执行原来代码！
+
 ```
