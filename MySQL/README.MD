@@ -1,5 +1,5 @@
 # MySQL
-    - [DDL](#ddl)
+   - [DDL](ddl)
 
 
 
