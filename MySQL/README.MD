@@ -1,6 +1,6 @@
 # MySQL
-   - [DDL](ddl)
-
+   - [DDL](#ddl)
+   - [DML](#dml)
 
 
 ## DDL
@@ -27,4 +27,10 @@ ALTER TABLE 表名 ADD (
       列名 列类型,
       ...
 );
+```
+
+## DML
+* 对表记录进行操作（增删改）
+```java
+
 ```
