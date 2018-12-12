@@ -6,6 +6,7 @@
 ## DDL
 * 对数据库或表的结构进行操作（增删改）
 ```java
+创建表
 CREATE TABLE (IF NOT EXISTS) 表名(
     列名 列类型,
     列名 列类型,
@@ -19,4 +20,11 @@ CREATE TABLE tb_stu(
       age int, 
       sex varchar(10)
       );
+      
+修改表
+ALTER TABLE 表名 ADD (
+      列名 列类型,
+      列名 列类型,
+      ...
+);
 ```
