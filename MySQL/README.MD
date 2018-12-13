@@ -92,4 +92,12 @@ CREATE TABLE emp (
     deptno INT,
     CONSTRAINT fk_emp FOREIGN KEY(mgr) REFERENCES emp(empno)  
   );
+  
+修改表时添加外键约束
+  ALERT TABLE emp
+  ADD CONSTRAINT fk_emp_deptno FOREIGN KEY(deptno) REFERENCES dept(deptno);
+
+修改表时删除外键约束
+  ALTER TABLE emp
+  DROP FOREIGN KEY fk_emp_deptno;/*约束名称*/
 ```
