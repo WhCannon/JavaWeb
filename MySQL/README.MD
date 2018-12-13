@@ -86,10 +86,10 @@ CREATE TABLE stu(
 ```
 * 外键约束
 ```java
-create talbe emp (
-    empno int primary key,
+CREATE TABLE emp (
+    empno INT PRIMARY KEY,
     ...
-    deptno int,
+    deptno INT,
     CONSTRAINT fk_emp FOREIGN KEY(mgr) REFERENCES emp(empno)  
   );
 ```
