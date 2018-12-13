@@ -53,4 +53,14 @@ CREATE TABLE stu(
 	age		INT,
 	gender	VARCHAR(10),
 	PRIMARY KEY(sid)
+    );
+```
+* 主键自增长
+```java
+CREATE TABLE stu(
+		sid INT PRIMARY KEY AUTO_INCREMENT,
+		sname	VARCHAR(20),
+		age		INT,
+		gender	VARCHAR(10)
+  );
 ```
