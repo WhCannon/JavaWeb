@@ -1,6 +1,7 @@
 # MySQL
    - [DDL](#ddl)
    - [DML](#dml)
+   - [约束](#约束)
 
 
 ## DDL
@@ -33,4 +34,23 @@ ALTER TABLE 表名 ADD (
 * 对表记录进行操作（增删改）
 ```java
 
+```
+
+## 约束
+* 主键约束
+```java
+CREATE TABLE stu(
+	sid	    CHAR(6) PRIMARY KEY,
+	sname	VARCHAR(20),
+	age		INT,
+	gender	VARCHAR(10) 
+    );
+    指定sid列为主键列，即为sid列添加主键约束
+   
+    CREATE TABLE stu(
+	sid	    CHAR(6),
+	sname	VARCHAR(20),
+	age		INT,
+	gender	VARCHAR(10),
+	PRIMARY KEY(sid)
 ```
