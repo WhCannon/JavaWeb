@@ -2,6 +2,8 @@
    - [DDL](#ddl)
    - [DML](#dml)
    - [约束](#约束)
+   - [练习](#练习)
+
 
 
 ## DDL
@@ -120,4 +122,24 @@ create table student(
   );
   这时在stu_tea这个中间表中的每条记录都是来说明student和teacher表的关系
   例如在stu_tea表中的记录：sid为1001，tid为2001，这说明编号为1001的学生有一个编号为2001的老师
+```
+
+## 练习
+### 练习1
+多表查询
+```java
+/*1. 查出至少有一个员工的部门。显示部门编号、部门名称、部门位置、部门人数。*/
+/*
+列：部门编号、部门名称、部门位置、部门人数(分组)
+表：dept d、emp e(部门人数没有员工表不行)
+条件：e.deptno=d.deptno
+分组条件：人数>1，使用内连接，去笛卡尔积
+
+部门编号、部门名称、部门位置在dept表中都有，只有部门人数需要使用emp表，使用deptno来分组得到。
+我们让dept和（emp的分组查询），这两张表进行连接查询
+*/
+SELECT z.*,d.dname,d.loc
+FROM dept d, (SELECT deptno, COUNT(*) cnt FROM emp GROUP BY deptno) z 
+WHERE z.deptno=d.deptno;
+
 ```
