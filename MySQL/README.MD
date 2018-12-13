@@ -101,3 +101,23 @@ CREATE TABLE emp (
   ALTER TABLE emp
   DROP FOREIGN KEY fk_emp_deptno;/*约束名称*/
 ```
+* 多对多关系
+```java
+create table student(
+    sid int PRIMARY KEY,
+    ...
+  );
+  create table teacher(
+    tid int PRIMARY KEY,
+    ...
+  );
+
+  create table stu_tea(
+    sid int,
+    tid int,
+    ADD CONSTRAINT fk_stu_tea_sid FOREIGN KEY(sid) REFERENCES student(sid),
+    ADD CONSTRAINT fk_stu_tea_tid FOREIGN KEY(tid) REFERENCES teacher(tid)
+  );
+  这时在stu_tea这个中间表中的每条记录都是来说明student和teacher表的关系
+  例如在stu_tea表中的记录：sid为1001，tid为2001，这说明编号为1001的学生有一个编号为2001的老师
+```
