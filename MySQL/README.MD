@@ -75,3 +75,12 @@ CREATE TABLE stu(
 		gender	VARCHAR(10)
   );
 ```
+* 唯一约束
+```java
+CREATE TABLE stu(
+		sid INT PRIMARY KEY AUTO_INCREMENT,
+		sname	VARCHAR(20) NOT NULL UNIQUE,
+		age		INT,
+		gender	VARCHAR(10)
+  );
+```
