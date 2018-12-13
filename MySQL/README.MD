@@ -225,4 +225,53 @@ FROM emp e
 WHERE e.deptno = (SELECT deptno FROM dept WHERE dname='销售部');
 
 
+/*9. 列出薪金高于公司平均薪金的所有员工信息，所在部门名称，上级领导，工资等级。*/
+/*
+列：员工所有信息(员工表)，部门名称(部门表)，上级领导(员工表)，工资等级(等级表)
+表：emp, dept, emp, salgrade
+条件：sal>平均工资，子查询
+所有员工，说明需要左外
+*/
+SELECT e.*, d.dname, m.ename, s.grade
+FROM emp e 
+  NATURAL LEFT JOIN dept d
+  LEFT JOIN emp m ON m.empno=e.mgr
+  LEFT JOIN salgrade s ON e.sal BETWEEN s.losal AND s.hisal
+WHERE e.sal > (SELECT AVG(sal) FROM emp);
+
+/*10.列出与庞统从事相同工作的所有员工及部门名称。*/
+/*
+列：员工表所有列，部门表名称
+表：emp, dept
+条件：job=庞统的工作，需要子查询，与部门表连接得到部门名称
+*/
+SELECT e.*, d.dname
+FROM emp e, dept d
+WHERE e.deptno=d.deptno AND e.job=(SELECT job FROM emp WHERE ename='庞统');
+
+/*11.列出薪金高于在部门30工作的所有员工的薪金的员工姓名和薪金、部门名称。*/
+/*
+列：姓名、薪金、部门名称(需要连接查询)
+表：emp, dept
+条件：sal > all(30部门薪金)，需要子查询
+*/
+
+SELECT e.ename, e.sal, d.dname
+FROM emp e, dept d
+WHERE e.deptno=d.deptno AND sal > ALL(SELECT sal FROM emp WHERE deptno=30)
+
+/**************************************************/
+
+/*12.列出在每个部门工作的员工数量、平均工资。*/
+/*
+列：部门名称, 部门员工数，部门平均工资
+表：emp, dept
+分组：deptno
+*/
+SELECT d.dname, e.cnt, e.avgsal
+FROM (SELECT deptno, COUNT(*) cnt, AVG(sal) avgsal FROM emp GROUP BY deptno) e, dept d
+WHERE e.deptno=d.deptno;
+
+
+
 ```
