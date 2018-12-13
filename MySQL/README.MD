@@ -84,3 +84,12 @@ CREATE TABLE stu(
 		gender	VARCHAR(10)
   );
 ```
+* 外键约束
+```java
+create talbe emp (
+    empno int primary key,
+    ...
+    deptno int,
+    CONSTRAINT fk_emp FOREIGN KEY(mgr) REFERENCES emp(empno)  
+  );
+```
