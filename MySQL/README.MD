@@ -64,3 +64,14 @@ CREATE TABLE stu(
 		gender	VARCHAR(10)
   );
 ```
+* 非空约束
+```java
+因为某些列不能设置为NULL值，所以可以对列添加非空约束。
+  * 例如：
+  CREATE TABLE stu(
+		sid INT PRIMARY KEY AUTO_INCREMENT,
+		sname	VARCHAR(20) NOT NULL,
+		age		INT,
+		gender	VARCHAR(10)
+  );
+```
