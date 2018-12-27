@@ -11,5 +11,6 @@
   - [Session](https://github.com/WhCannon/JavaWeb/tree/master/Session/README.MD) 
   - [JavaBean](https://github.com/WhCannon/JavaWeb/tree/master/JavaBean/README.MD) 
   - [EL表达式、JSTL](https://github.com/WhCannon/JavaWeb/tree/master/EL/README.MD)
-  - [MySQL](https://github.com/WhCannon/JavaWeb/tree/master/MySQL/README.MD) 
+  - [MySQL](https://github.com/WhCannon/JavaWeb/tree/master/MySQL/README.MD)
+  - [JDBC](https://github.com/WhCannon/JavaWeb/tree/master/JDBC/README.MD)
   - [项目架构](https://github.com/WhCannon/JavaWeb/tree/master/Service/README.MD) 
