@@ -99,10 +99,6 @@ public void fun3() throws Exception {
 			 * 三、循环遍历rs，打印其中数据
 			 * getString()和getObject()是通用的！
 			 */
-//			while(rs.next()) {
-//				System.out.println(rs.getObject(1) + ", " 
-//						+ rs.getString("ename") + ", " + rs.getDouble("sal"));
-//			}
 			
 			int count = rs.getMetaData().getColumnCount();
 			while(rs.next()) {//遍历行
