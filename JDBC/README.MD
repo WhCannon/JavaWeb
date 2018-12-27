@@ -95,11 +95,6 @@ public void fun3() throws Exception {
 			rs = stmt.executeQuery(sql);
 			
 			// 解析ResultSet
-			// 1. 把行光标移动到第一行，可以调用next()方法完成！
-			rs.last();//把光标移动到最后一行
-System.out.println(rs.getRow());
-			rs.beforeFirst();
-			
 			/*
 			 * 三、循环遍历rs，打印其中数据
 			 * getString()和getObject()是通用的！
