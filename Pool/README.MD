@@ -1,5 +1,6 @@
 # 数据库连接池
   - [dbcp](#dbcp)
+  - [c3p0](#c3p0)
   
 ## dbcp
 ```java
@@ -32,4 +33,29 @@ public class Demo1 {
 		con1.close();//把连接归还给池！
 	}
 }
+```
+## c3p0
+```java
+public class Demo1 {
+	@Test
+	public void fun1() throws PropertyVetoException, SQLException {
+		// 创建连接池对象
+		ComboPooledDataSource dataSource = new ComboPooledDataSource();
+		
+		// 对池进行四大参数的配置
+		dataSource.setDriverClass("com.mysql.jdbc.Driver");
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/mydb3");
+		dataSource.setUser("root");
+		dataSource.setPassword("123");
+		
+		// 配置池参数
+		dataSource.setAcquireIncrement(5);
+		dataSource.setInitialPoolSize(20);
+		dataSource.setMinPoolSize(2);
+		dataSource.setMaxPoolSize(50);
+		
+		Connection con = dataSource.getConnection();
+		System.out.println(con);
+		con.close();
+	}
 ```
