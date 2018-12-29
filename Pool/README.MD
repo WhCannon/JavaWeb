@@ -90,3 +90,14 @@ public class Demo1 {
 	</named-config>
 </c3p0-config>
 ```
+* 通过配置文件来配置参数
+```java
+public void fun2() throws SQLException{
+
+		// 在创建连接池对象时，这个对象就会自动加载配置文件！不用我们来指定
+		ComboPooledDataSource dataSource  = new ComboPooledDataSource();		
+		Connection con = dataSource.getConnection();
+		System.out.println(con);
+		con.close();
+	}	
+```
