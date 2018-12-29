@@ -335,4 +335,62 @@ public void fun1() throws SQLException {
 		Stu stu = qr.query(sql, new BeanHandler<Stu>(Stu.class), params);
 		System.out.println(stu);
 	}
+/**
+	 * BeanListHandler的应用，它是多行处理器
+	 * 每行对象一个Stu对象！
+	 * @throws Exception
+	 */
+	@Test
+	public void fun3() throws Exception {
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "select * from t_stu";
+		List<Stu> stuList = qr.query(sql, new BeanListHandler<Stu>(Stu.class));
+		
+		System.out.println(stuList);
+	}
+	
+	/**
+	 * MapHandler的应用，它是单行处理器，把一行转换成一个Map对象
+	 * @throws SQLException 
+	 */
+	@Test
+	public void fun4() throws SQLException  {
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "select * from t_stu where sid=?";
+		Object[] params = {1001};
+		Map map = qr.query(sql, new MapHandler(), params);
+		
+		System.out.println(map);
+	}
+	
+	/**
+	 * MapListHandler，它是多行处理器，把每行都转换成一个Map，即List<Map>
+	 * @throws SQLException
+	 */
+	@Test
+	public void fun5() throws SQLException  {
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "select * from t_stu";
+		List<Map<String,Object>> mapList = qr.query(sql, new MapListHandler());
+		
+		System.out.println(mapList);
+	}
+	
+	/**
+	 * ScalarHandler，它是单行单列时使用，最为合适！
+	 * @throws SQLException
+	 */
+	@Test
+	public void fun6() throws SQLException {
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "select count(*) from t_stu";
+		/*
+		 * Integer、Long、BigInteger
+		 */
+		Number cnt = (Number)qr.query(sql, new ScalarHandler());
+		
+		long c = cnt.longValue();
+		System.out.println(c);
+	}
+}
 ```
