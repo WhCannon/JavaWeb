@@ -100,4 +100,15 @@ public void fun2() throws SQLException{
 		System.out.println(con);
 		con.close();
 	}	
+public void fun3() throws SQLException{
+		/**
+		 * 构造器的参数指定命名配置元素的名称！
+		 * <named-config name="oracle-config"> 
+		 */
+		ComboPooledDataSource dataSource  = new ComboPooledDataSource("oracle-config");
+		
+		Connection con = dataSource.getConnection();
+		System.out.println(con);
+		con.close();
+	}
 ```
