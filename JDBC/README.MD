@@ -5,6 +5,7 @@
   - [JDBCUtils](#jdbcutils)
   - [处理大型文件](#处理大型文件)
   - [批处理](#批处理)
+  - [dbutils](#dbutils)
 
 ## Connection对象
 ```java
@@ -307,4 +308,31 @@ public class Demo5 {
 		System.out.println(end - start);//412764, 301
 	}
 }
+```
+
+## dbutils
+```java
+public void fun1() throws SQLException {
+		// 对数据库的增、删、改操作
+		// 创建QueryRunner，需要提供数据库连接池对象
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "insert into t_stu values(?,?,?,?)";//给出sql模板
+		Object[] params = {1002, "liSi", 88, "female"};//给出参数		
+		qr.update(sql, params);
+	}
+	
+	@Test
+	public void fun2() throws SQLException {
+		// 查询数据库
+		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+		String sql = "select * from t_stu where sid=?";
+		Object[] params = {1001};
+		
+		// 把结果集转换成javabean对象
+		// 执行query()方法，需要给出结果集处理器，即ResultSetHandler的实现类对象
+		// 我们给的是BeanHandler，它实现了ResultSetHandler
+		// 它需要一个类型，然后它会把rs结果集中的数据封装到指定类型的javabean对象中，然后返回javabean
+		Stu stu = qr.query(sql, new BeanHandler<Stu>(Stu.class), params);
+		System.out.println(stu);
+	}
 ```
