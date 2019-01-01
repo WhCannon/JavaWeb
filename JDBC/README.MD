@@ -178,37 +178,18 @@ public boolean login2(String username, String password) throws Exception {
 
 ## JDBCUtils
 ```java
-public class JdbcUtils {
-	private static Properties props = null;
-	
-	// 只在JdbcUtils类被加载时执行一次！
-	static {
-		// 给props进行初始化，即加载dbconfig.properties文件到props对象中
-		try {
-			InputStream in = JdbcUtils.class.getClassLoader()
-					.getResourceAsStream("dbconfig.properties");
-			props = new Properties();
-			props.load(in);
-		} catch(IOException e) {
-			throw new RuntimeException(e);
-		}
+public class AccountDao {
+	public static void update(String name, double money) throws SQLException {
+		QueryRunner qr = new TxQueryRunner();
+		String sql = "update account set balance=balance+? where name=?";
+		Object[] params = {money, name};
 		
-		// 加载驱动类
-		try {
-			Class.forName(props.getProperty("driverClassName"));
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
-	// 获取连接!
-	public static Connection getConnection() throws SQLException {
-		// 得到Connection
-		return DriverManager.getConnection(props.getProperty("url"),
-				props.getProperty("username"), 
-				props.getProperty("password"));
+		// 我们需要自己来提供连接，保证多次调用使用的是同一个连接！
+		qr.update(sql, params);
 	}
 }
+
+
 ```
 
 ## 处理大型文件
