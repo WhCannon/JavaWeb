@@ -238,3 +238,5 @@ public class EncodingRequest extends HttpServletRequestWrapper {
 	}
 }
 ```
+## 案例4
+页面静态化
