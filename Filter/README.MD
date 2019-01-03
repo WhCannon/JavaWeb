@@ -28,6 +28,6 @@ public class AFilter implements Filter {
 </filter>
 <fitler-mapping>
   <filter-name>xxx</filter-name>
-  <url-pattern></url-pattern>
+  <url-pattern>/*</url-pattern>
 </filter-mapping>
 ```
