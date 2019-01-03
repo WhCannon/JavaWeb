@@ -16,4 +16,5 @@
   - [JDBC](https://github.com/WhCannon/JavaWeb/tree/master/JDBC/README.MD)
   - [事务](https://github.com/WhCannon/JavaWeb/tree/master/SW/README.MD)
   - [数据库连接池](https://github.com/WhCannon/JavaWeb/tree/master/Pool/README.MD)
-  - [项目架构](https://github.com/WhCannon/JavaWeb/tree/master/Service/README.MD) 
+  - [项目架构](https://github.com/WhCannon/JavaWeb/tree/master/Service/README.MD)
+  - [国际化]((https://github.com/WhCannon/JavaWeb/tree/master/Locale/README.MD))
