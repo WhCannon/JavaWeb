@@ -56,7 +56,14 @@ public class User implements HttpSessionBindingListener {
 ## 感知型监听器
 * HttpSessionActivationListener
 ```java
-
+public class Person implements HttpSessionActivationListener, Serializable {
+	public void sessionDidActivate(HttpSessionEvent evt) {
+		System.out.println("session已经活化");
+	}
+	public void sessionWillPassivate(HttpSessionEvent evt) {
+		System.out.println("session被钝化了！");
+	}
+}
 ```
 * 配置Tomcat钝化session的参数  
 把下面配置文件放到tomcat\conf\catalina\localhost目录下！文件名称为项目名称。
