@@ -1,6 +1,6 @@
 # 过滤器Filter
 
-* 过滤器示例
+* 过滤器生命周期
 ```java
 public class AFilter implements Filter {
 	// 创建之后马上执行，用来做初始化！
@@ -19,4 +19,15 @@ public class AFilter implements Filter {
 	public void destroy() {
 	}
 }
+```
+* 在web.xml中配置
+```java
+<filter>
+  <filter-name>xxx</filter-name>
+  <filter-class>cn.itcast.web.filter.AFitler</fitler-class>
+</filter>
+<fitler-mapping>
+  <filter-name>xxx</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
 ```
