@@ -38,3 +38,16 @@ public class BListener implements ServletContextAttributeListener {
     <listener-class>cn.itcast.web.listener.AListener</listener-class>
   </listener>
 ```
+* 感知监听
+```java
+public class User implements HttpSessionBindingListener {
+	...
+	...
+	public void valueBound(HttpSessionBindingEvent event) {
+		System.out.println("啊~，session添加了我！");
+	}
+	public void valueUnbound(HttpSessionBindingEvent event) {
+		System.out.println("哇哇哇~，无情的session抛弃了我！");
+	}
+}
+```
