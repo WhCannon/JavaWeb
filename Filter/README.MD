@@ -191,4 +191,50 @@ public class AdminFilter implements Filter {
 	}
 }
 ```
+## 案例3
+```java
+public class EncodingFilter implements Filter {
+	public void destroy() {
+	}
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		// 处理post请求编码问题
+		request.setCharacterEncoding("utf-8");
+		
+		// 处理GET请求的编码问题
+		/*
+		 * 调包request
+		 * 1. 写一个request的装饰类
+		 * 2. 在放行时，使用我们自己的request
+		 */
+		HttpServletRequest req = (HttpServletRequest) request;				
+		if(req.getMethod().equals("GET")) {
+			EncodingRequest er = new EncodingRequest(req);
+			chain.doFilter(er, response);
+		} else if(req.getMethod().equals("POST")) {
+			chain.doFilter(request, response);
+		}
+	}
 
+	public void init(FilterConfig fConfig) throws ServletException {
+	}
+}
+// 装饰request
+public class EncodingRequest extends HttpServletRequestWrapper {
+	private HttpServletRequest req;	
+	public EncodingRequest(HttpServletRequest request) {
+		super(request);
+		this.req = request;
+	}
+	public String getParameter(String name) {
+		String value = req.getParameter(name);		
+		// 处理编码问题
+		try {
+			value = new String(value.getBytes("iso-8859-1"), "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}	
+		return value;
+	}
+}
+```
