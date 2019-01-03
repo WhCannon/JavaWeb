@@ -34,3 +34,11 @@ public class AFilter implements Filter {
 ```
 
 ## 过滤器案例
+### [案例1](#答案1)
+分ip统计访问次数
+
+
+## 答案1
+```java
+
+```
