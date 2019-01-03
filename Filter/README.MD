@@ -38,7 +38,6 @@ public class AFilter implements Filter {
   - [案例2](#案例2)
   - [案例3](#案例3)
   - [案例4](#案例4)
-  - [案例5](#案例5)
 ### 案例1
 分ip统计访问次数
 ```java
