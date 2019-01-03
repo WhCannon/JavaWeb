@@ -108,5 +108,87 @@ public class AFilter implements Filter {
 </table>
   </body>
 ```
+## 案例2
+粗粒度权限控制
+```java
+public class LoginServlet extends HttpServlet {
 
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		
+		/*
+		 * 1. 获取用户名
+		 * 2. 判断用户名中是否包含itcast
+		 *    如果包含，就是管理员
+		 *    如果不包含，就是普通会员
+		 * 3. 要把登录的用户名称保存到session中
+		 * 4. 转发到index.jsp
+		 */
+		String username = request.getParameter("username");
+		if(username.contains("itcast")) {
+			request.getSession().setAttribute("admin", username);
+		} else { 
+			request.getSession().setAttribute("username", username);
+		}
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+	}
+}
+public class UserFilter implements Filter {
+	public void destroy() {
+	}
+
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		/*
+		 * 1. 得到session
+		 * 2. 判断session域中是否存在admin，如果存在，放行；
+		 * 3. 否则，判断session域中是否存在username，如果存在，放行，否则打回到login.jsp，并告诉它不要瞎留达
+		 */
+		HttpServletRequest req = (HttpServletRequest) request;
+		String name = (String)req.getSession().getAttribute("admin");
+		if(name != null) {
+			chain.doFilter(request, response);
+			return;
+		}
+		
+		name = (String)req.getSession().getAttribute("username");
+		if(name != null) {
+			chain.doFilter(request, response);
+		} else {
+			req.setAttribute("msg", "您啥都不是，不要瞎溜达！");
+			req.getRequestDispatcher("/login.jsp").forward(request, response);
+		}
+	}
+
+	public void init(FilterConfig fConfig) throws ServletException {
+	}
+}
+public class AdminFilter implements Filter {
+
+	public void destroy() {
+	}
+
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		/*
+		 * 1. 得到session
+		 * 2. 判断session域中是否存在admin，如果存在，放行
+		 * 3. 否则打回到login.jsp
+		 */
+		HttpServletRequest req = (HttpServletRequest) request;
+		String name = (String)req.getSession().getAttribute("admin");
+		if(name != null) {
+			chain.doFilter(request, response);
+		} else {
+			req.setAttribute("msg", "您可能是个啥，但肯定不是管理员！");
+			req.getRequestDispatcher("/login.jsp").forward(request, response);
+		}
+	}
+
+	public void init(FilterConfig fConfig) throws ServletException {
+	}
+}
+```
 
