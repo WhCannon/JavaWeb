@@ -50,7 +50,15 @@ public class Upload2Servlet extends HttpServlet {
 	}
 }
 ```
-
+## 上传的注意事项
+```java
+文件路径
+String filename = fi2.getName();
+int index = filename.lastIndexOf("\\");
+if(index != -1) {
+ filename = filename.substring(index+1);
+}
+```
 
 
 ## 文件下载
