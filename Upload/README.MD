@@ -2,7 +2,7 @@
 ## 文件上传
   - [上传的限制](#上传的限制)
   - [上传的步骤](#上传的步骤)
-## [文件下载](#文件下载)
+## [文件的下载](#文件的下载)
 
 ## 上传的限制
 ```java
@@ -108,7 +108,7 @@ public class Upload3Servlet extends HttpServlet {
 ```
 
 
-## 文件下载
+## 文件的下载
 ```java
 public class Download1Servlet extends HttpServlet {
 	@Override
