@@ -31,8 +31,10 @@ public class Demo1 {
 		
 		Transport.send(msg);//发送邮件
 	}
+```
 
-	// 发送带有附件的邮件！！
+## 发送带有附件的邮件
+```java
 	public void fun2() throws Exception {
 		// 1. 得到session
 		Properties props = new Properties();
@@ -76,8 +78,10 @@ public class Demo1 {
 		//发邮件
 		Transport.send(msg);		
 	}
-	
-	//MailUtils小工具
+```	
+
+## MailUtils小工具
+```java
 	public void fun3() throws Exception {
 		// 得到session
 		Session session = MailUtils.createSession("smtp.163.com", 
