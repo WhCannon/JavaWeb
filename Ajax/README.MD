@@ -3,6 +3,7 @@
   - [校验用户名是否被注册](#例2)
   - [响应内容为xml](#例3)
   - [省市联动](#例4)
+  - [XStream](#xstream)
   
 
 ## Ajax第一例
@@ -374,3 +375,5 @@ window.onload = function() {
   </body>
 </html>
 ```
+
+## XStream
