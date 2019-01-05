@@ -81,3 +81,26 @@ window.onload = function() {//监听器，文档加载完毕后执行
       * 是：返回1
       * 否：返回0
 ```
+* jsp
+```jsp
+
+```
+* Servlet
+```java
+public class ValidateUsernameServlet extends HttpServlet {
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		
+		/* 1. 获取参数username
+		 * 2. 判断是否为itcast
+		 *    如果是：响应1
+		 *    如果不是：响应0 */
+		String username = request.getParameter("username");
+		if(username.equalsIgnoreCase("itcast")) {
+			response.getWriter().print("1");
+		} else {
+			response.getWriter().print("0");
+		}}}
+```
