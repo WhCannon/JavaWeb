@@ -71,12 +71,11 @@ window.onload = function() {//监听器，文档加载完毕后执行
 1. 编写页面：ajax3.jsp
     > 给出注册表单页面
     > 给用户名文本框添加onblur事件的监听
-    > 获取文本框的内容，通过ajax4步发送给服务器，得到响应结果
+    > 获取文本框的内容，通过ajax发送给服务器，得到响应结果
       * 如果为1：在文本框后显示“用户名已被注册”
       * 如果为0：什么都不做！
 
-2. 编写Servlet
-  * ValidateUsernameServlet
+2. 编写Servlet: ValidateUsernameServlet
     > 获取客户端传递的用户名参数
     > 判断是否为itcast
       * 是：返回1
