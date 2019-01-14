@@ -1,6 +1,6 @@
 # 注解
 
-## 定义注解
+## 定义注解及使用
 ```java
 public @interface MyAnn{}
 
@@ -18,4 +18,12 @@ public class MyClass {
 		int n = 10;
 	}
 }
+```
+## 注解的属性
+```java
+public @interface MyAnn {
+	String value();
+	int value1();
+}
+
 ```
