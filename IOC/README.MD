@@ -2,6 +2,7 @@
   - [Student](#student)
   - [Teacher](#teacher)
   - [beans.xml](#beans-xml)
+  - [StudentDao](#studentdao)
   
 
 
@@ -60,4 +61,12 @@ public class Teacher {
 		<property name="studentDao" ref="stuDao"/>
 	</bean>
 </beans>
+```
+
+## StudentDao
+```java
+public interface StudentDao {
+	void add(Student stu);
+	void update(Student stu);
+}
 ```
