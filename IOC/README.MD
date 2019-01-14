@@ -3,6 +3,7 @@
   - [Teacher](#teacher)
   - [beans.xml](#beans-xml)
   - [StudentDao](#studentdao)
+  - [StudentImpl](#studentimpl)
   
 
 
@@ -68,5 +69,16 @@ public class Teacher {
 public interface StudentDao {
 	void add(Student stu);
 	void update(Student stu);
+}
+```
+## StudentImpl
+```java
+public class StudentImpl implements StudentDao {
+	public void add(Student stu) {
+		System.out.println("StudentImpl.add()");
+	}
+	public void update(Student stu) { 
+		System.out.println("StudentImpl.update()");
+	}
 }
 ```
