@@ -56,7 +56,7 @@ public class Teacher {
 		<property name="salary" value="123.456" />
 	</bean>
 	
-	<bean id="stuDao" className="cn.itcast.dao.impl.StudentImpl2">
+	<bean id="stuDao" className="cn.itcast.dao.impl.StudentImpl">
 	</bean>
 	
 	<bean id="stuService" className="cn.itcast.service.impl.StudentServiceImpl">
