@@ -30,6 +30,12 @@ public @interface MyAnn {
 
 ## 反射泛型信息
 ```java
+public class Demo1 {
+	@Test
+	public void fun1() {
+		new B();
+	}
+}
 abstract class A<T> {
 	public A() {
 		 // 在这里获取子类传递的泛型信息，要得到一个Class！
