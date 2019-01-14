@@ -20,4 +20,34 @@ public class AServlet extends HttpServlet {
 		resp.getWriter().print("hello servlet3.0!!");
 	}
 }
+
+@WebFilter(urlPatterns="/*")
+public class AFilter implements Filter {
+	@Override
+	public void destroy() {
+	}
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse repsonse,
+			FilterChain chain) throws IOException, ServletException {
+		System.out.println("哈哈~，你看到我没有！");
+		chain.doFilter(request, repsonse);
+	}
+	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+		
+	}
+}
+
+@WebListener
+public class AListener implements ServletContextListener {
+	@Override
+	public void contextDestroyed(ServletContextEvent arg0) {
+		System.out.println("死掉了");
+
+	}
+	@Override
+	public void contextInitialized(ServletContextEvent arg0) {
+		System.out.println("出生了");
+	}
+}
 ```
