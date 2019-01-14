@@ -100,7 +100,5 @@ class A {
 	String sex();
 }
 ```
-## 案例
-```java
 
-```
+
