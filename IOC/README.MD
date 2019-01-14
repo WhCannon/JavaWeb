@@ -4,6 +4,7 @@
   - [beans.xml](#beans-xml)
   - [StudentDao](#studentdao)
   - [StudentImpl](#studentimpl)
+  - [StudentService](#studentservice)
   - [具体使用](#具体使用)
   
 
@@ -80,6 +81,25 @@ public class StudentImpl implements StudentDao {
 	}
 	public void update(Student stu) { 
 		System.out.println("StudentImpl.update()");
+	}
+}
+```
+
+## StudentService
+```java
+public interface StudentService {
+	void login();
+}
+
+public class StudentServiceImpl implements StudentService {
+	private StudentDao studentDao = null;
+	// 谁调用service方法，谁就需要先调用本方法，提供dao
+	public void setStudentDao(StudentDao studentDao) {
+		this.studentDao = studentDao;
+	}
+	public void login() {
+		studentDao.add(null);
+		studentDao.update(null);
 	}
 }
 ```
