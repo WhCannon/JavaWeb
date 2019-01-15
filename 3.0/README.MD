@@ -103,5 +103,25 @@ public class AServlet extends HttpServlet {
 ```
 ## 上传支持
 ```java
-
+@WebServlet(urlPatterns="/AServlet")
+@MultipartConfig
+public class AServlet extends HttpServlet {
+	@Override
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		 //1. getParameter()方法可以使用了！！！
+		String username = req.getParameter("username");
+		 // 2. 获取文件表单字段，对应的Part对象
+		Part part = req.getPart("resume");
+		
+		 // 3. 从Part中获取需要的数据
+		System.out.println(part.getContentType());// 获取上传文件的MIME类型
+		System.out.println(part.getSize());// 获取上传文件的字节数
+		System.out.println(part.getName());// 获取文件字段名称
+		// 获取头，这个头中包含了上传文件的名称
+		System.out.println(part.getHeader("Content-Disposition"));
+		part.write("C:/xxx.jpg");// 保存上传文件		
+	}
+}
 ```
