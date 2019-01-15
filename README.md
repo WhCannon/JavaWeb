@@ -26,3 +26,4 @@
   - [注解](https://github.com/WhCannon/JavaWeb/tree/master/Ann/README.MD)
   - [IOC](https://github.com/WhCannon/JavaWeb/tree/master/IOC/README.MD)
   - [Servlet3.0](https://github.com/WhCannon/JavaWeb/tree/master/3.0/README.MD)
+  - [动态代理](https://github.com/WhCannon/JavaWeb/tree/master/Proxy/README.MD)
