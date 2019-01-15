@@ -1,5 +1,5 @@
 # 动态代理
-
+  - [例子](#例子)
 ## 动态代理步骤
 ```java
 public class Demo1 {
@@ -24,4 +24,9 @@ interface A {
 	public void a();}
 interface B {
 	public void b();}
+```
+
+## 例子
+```java
+
 ```
