@@ -27,6 +27,14 @@ interface B {
 ```
 
 ## 例子
-```java
+```javapublic interface Waiter {
+	// 服务
+	public void serve();
+}
+public class ManWaiter implements Waiter {
+	public void serve() {
+		System.out.println("服务中...");
+	}
+}
 
 ```
