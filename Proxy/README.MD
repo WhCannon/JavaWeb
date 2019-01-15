@@ -1,5 +1,5 @@
 # 动态代理
-  - [例子](#例子)
+  - [案例](#案例)
 ## 动态代理步骤
 ```java
 public class Demo1 {
@@ -26,7 +26,8 @@ interface B {
 	public void b();}
 ```
 
-## 例子
+## 案例
+### 案例1
 ```java
 public interface Waiter {
 	public void serve();
@@ -61,4 +62,9 @@ class WaiterInvocationHandler implements InvocationHandler {
 		return null;
 	}
 }
+```
+### 案例2
+代理工厂
+```java
+
 ```
