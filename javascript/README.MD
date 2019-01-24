@@ -318,7 +318,7 @@
 完成图片轮换播放
 
 ### [练习10](#答案10)
-图片的显示和隐藏
+定时弹出广告
 
 
 
@@ -877,25 +877,41 @@
 ### 答案10
 ```html
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<script>			
-			function hideImg(){
-				var img = document.getElementById("img1");
-				img.style.display = "none";
+		<!--
+			1. 确定事件: 页面加载完成的事件 onload
+			2. 事件要触发函数:  init()
+			3. init函数里面做一件事: 
+			   1. 启动一个定时器 : setTimeout() 
+			   2. 显示一个广告
+			      1. 再去开启一个定时5秒钟之后,关闭广告
+		-->	
+		<script>		
+			function init(){
+				setTimeout("showAD()",3000);
 			}			
-			function showImg(){
+			function showAD(){
+				//首先要获取要操作的img
 				var img = document.getElementById("img1");
-				img.style.display = "block";
+				//显示广告
+				img.style.display = "block";				
+				//再开启定时器,关闭广告
+				setTimeout("hideAD()",3000);
+			}		
+			function hideAD(){
+				//首先要获取要操作的img
+				var img = document.getElementById("img1");
+				//隐藏广告
+				img.style.display = "none";
 			}
 		</script>
 	</head>
-	<body>
-		<input type="button" value="显示" onclick="showImg()" />
-		<input type="button" value="隐藏" onclick="hideImg()" /><br />		
-		<img src="../img/1-161104143944.gif" id="img1" />				
+	<body onload="init()">
+		<img id="img1" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg" width="100%" style="display: none;"/>
 	</body>
 </html>
 ```
