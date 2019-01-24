@@ -317,6 +317,11 @@
 ### [练习9](#答案9)
 完成图片轮换播放
 
+### [练习10](#答案10)
+图片的显示和隐藏
+
+
+
 ## 答案1
 ```html
 <html>
@@ -866,6 +871,31 @@
 	</head>
 	<body onload="init()">
 		<img src="../img/1.jpg" width="100%" id="img1"/>
+	</body>
+</html>
+```
+### 答案10
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>			
+			function hideImg(){
+				var img = document.getElementById("img1");
+				img.style.display = "none";
+			}			
+			function showImg(){
+				var img = document.getElementById("img1");
+				img.style.display = "block";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="显示" onclick="showImg()" />
+		<input type="button" value="隐藏" onclick="hideImg()" /><br />		
+		<img src="../img/1-161104143944.gif" id="img1" />				
 	</body>
 </html>
 ```
