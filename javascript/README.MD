@@ -314,6 +314,9 @@
 ### [练习8](#答案8)
 根据输入的行和列自动生成表格
 
+### [练习9](#答案9)
+完成图片轮换播放
+
 ## 答案1
 ```html
 <html>
@@ -782,7 +785,7 @@
 3、显示到页面上  
 	把表格的代码设置到div里面  
 	使用innerHTML属性  
-``html
+```html
 <html>
  <head>
   <title>HTML示例</title>
@@ -828,5 +831,41 @@
 
  </body>
 </html>
+```
 
+## 答案9
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1. 确定事件: 文档加载完成的事件 onload
+			2. 事件要触发 : init()
+			3. 函数里面要做一些事情:(通常会去操作元素,提供交互)
+			   1. 开启定时器: 执行切换图片的函数 changeImg()
+			4.  changeImg()
+			   1. 获得要切换图片的那个元素
+		-->
+		<script>
+			var index = 0;	
+			function changeImg(){
+				//1. 获得要切换图片的那个元素
+				var img = document.getElementById("img1");
+				//计算出当前要切换到第几张图片
+				var curIndex = index%3 + 1;  //0,1,2 
+				img.src="../img/"+curIndex+".jpg";  //1,2,3
+				//每切换完,索引加1
+				index = index + 1;
+			}
+			function init(){	
+				setInterval("changeImg()",1000);
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<img src="../img/1.jpg" width="100%" id="img1"/>
+	</body>
+</html>
 ```
