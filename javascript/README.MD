@@ -14,6 +14,15 @@
 
 
 ## 基本语法
+### 事件
+```java
+onfocus:获取焦点    
+onblur:失去焦点    
+onkeyup:按键抬起事件    
+ondbclick:双击事件    
+onmouseenter:鼠标移入    
+onmouseout:鼠标移出
+```
 ### 定义方法
 ```html
 <script type="text/javascript">		
