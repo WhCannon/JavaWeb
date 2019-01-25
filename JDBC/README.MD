@@ -22,17 +22,13 @@ public void fun1() throws ClassNotFoundException, SQLException {
 		String url="jdbc:jdbc:mysql://localhost:3306/mydb3";
 		String username="root";
 		String password="123";
-		// 使用url、username、password，得到连接对象
+		// 使用url、username、password，建立连接
 		Connection con = DriverManager.getConnection(url,username,password);
 		
-		Class.forName("com.mysql.jdbc.Driver");// 加载驱动类(注册驱动)
-		com.mysql.jdbc.Driver driver = new com.mysql.jdbc.Driver();
-		DriverManager.registerDriver(driver);
-		//DriverManager.registerDriver(new com.mysql.jdbc.Driver());注册驱动
+		DriverManager.registerDriver(new com.mysql.jdbc.Driver());注册驱动
 		//建立连接
 		Connection con = DriverManager.getConnection(
 				"jdbc:mysql://localhost:3306/mydb3", "root", "123");
-		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost/mydb3", "root", "123");
 		System.out.println(con);
 	}
 }
