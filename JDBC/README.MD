@@ -178,6 +178,25 @@ public boolean login2(String username, String password) throws Exception {
 
 ## JDBCUtils
 ```java
+static{
+	try {
+		//1. 创建一个属性配置对象
+		Properties properties = new Properties();
+                //使用类加载器，去读取src底下的资源文件。 后面在servlet  //对应文件位于src目录底下
+		InputStream is = JDBCUtil.class.getClassLoader().getResourceAsStream("jdbc.properties");
+		//导入输入流。
+		properties.load(is);
+		//读取属性
+		driverClass = properties.getProperty("driverClass");
+		url = properties.getProperty("url");
+		name = properties.getProperty("name");
+		password = properties.getProperty("password");				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 public class AccountDao {
 	public static void update(String name, double money) throws SQLException {
 		QueryRunner qr = new TxQueryRunner();
