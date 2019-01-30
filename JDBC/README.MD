@@ -366,8 +366,7 @@ public class Demo5 {
 	public void fun5() throws SQLException {
 		Connection con = JdbcUtils.getConnection();
 		String sql = "INSERT INTO t_stu VALUES(?,?,?,?)";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		
+		PreparedStatement pstmt = con.prepareStatement(sql);	
 		// 添加参数到批中
 		for(int i = 0; i < 10000; i++) {
 			pstmt.setInt(1, i+1);
@@ -459,11 +458,8 @@ public void fun1() throws SQLException {
 	public void fun6() throws SQLException {
 		QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
 		String sql = "select count(*) from t_stu";
-		/*
-		 * Integer、Long、BigInteger
-		 */
-		Number cnt = (Number)qr.query(sql, new ScalarHandler());
-		
+		 // Integer、Long、BigInteger
+		Number cnt = (Number)qr.query(sql, new ScalarHandler());		
 		long c = cnt.longValue();
 		System.out.println(c);
 	}
