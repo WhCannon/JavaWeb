@@ -306,7 +306,6 @@ public class Demo4 {
 		Connection con = JdbcUtils.getConnection();
 		String sql = "insert into tab_bin values(?,?,?)";
 		PreparedStatement pstmt = con.prepareStatement(sql);
-		
 		pstmt.setInt(1, 1);
 		pstmt.setString(2, "流光飞舞.mp3");
 		/**
@@ -330,14 +329,11 @@ public class Demo4 {
 	public void fun2() throws Exception {
 		 // 1. 创建Connection
 		Connection con = JdbcUtils.getConnection();
-
 		 // 2. 给出select语句模板，创建pstmt
 		String sql = "select * from tab_bin";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		
+		PreparedStatement pstmt = con.prepareStatement(sql);	
 		// 3. pstmt执行查询，得到ResultSet
-		ResultSet rs = pstmt.executeQuery();
-		
+		ResultSet rs = pstmt.executeQuery();	
 		// 4. 获取rs中名为data的列数据
 		if(rs.next()) {
 			Blob blob = rs.getBlob("data");
@@ -409,7 +405,8 @@ public void fun1() throws SQLException {
 		Stu stu = qr.query(sql, new BeanHandler<Stu>(Stu.class), params);
 		System.out.println(stu);
 	}
-/**
+
+	/**
 	 * BeanListHandler的应用，它是多行处理器
 	 * 每行对象一个Stu对象！
 	 * @throws Exception
