@@ -48,13 +48,11 @@ public class Demo2 {
 		// 对mysql而言，它的子协议结构：//主机:端口号/数据库名称
 		String url = "jdbc:mysql://localhost:3306/mydb3";
 		String username = "root";
-		String password = "123";
-		
+		String password = "123";		
 		// 加载驱动类
 		Class.forName(driverClassName);
 		// 使用DriverManager，以及剩下的3个参数，得到Connection
-		Connection con = DriverManager.getConnection(url, username, password);
-		
+		Connection con = DriverManager.getConnection(url, username, password);		
 		/*
 		 * 对数据库做增、删、改
 		 * 1. 通过Connection对象创建Statement，它的功能就是向数据库发送sql语句！
@@ -69,8 +67,7 @@ public class Demo2 {
 		String sql3 = "DELETE FROM stu";
 		int r = stmt.executeUpdate(sql);
 		System.out.println(r);
-	}
-	
+	}	
 public void fun3() throws Exception {
 		Connection con = null;//定义引用
 		Statement stmt = null;
@@ -86,21 +83,18 @@ public void fun3() throws Exception {
 			String username = "root";
 			String password = "123";
 			Class.forName(driverClassName);
-			con = DriverManager.getConnection(url, username, password);//实例化
-			
+			con = DriverManager.getConnection(url, username, password);//实例化			
 			// 二、得到Statement，执行select语句
 			// 1. 得到Statement对象：Connection的createStatement()方法
 			// 2. 调用Statement的ResultSet rs = executeQuery(String querySql)
 			stmt = con.createStatement();
 			String sql = "select * from emp";
-			rs = stmt.executeQuery(sql);
-			
+			rs = stmt.executeQuery(sql);			
 			// 解析ResultSet
 			/*
 			 * 三、循环遍历rs，打印其中数据
 			 * getString()和getObject()是通用的！
-			 */
-			
+			 */			
 			int count = rs.getMetaData().getColumnCount();
 			while(rs.next()) {//遍历行
 				for(int i = 1; i <= count; i++) {//遍历列
@@ -110,8 +104,7 @@ public void fun3() throws Exception {
 					}
 				}
 				System.out.println();
-			}
-			
+			}			
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		} finally {
@@ -119,8 +112,7 @@ public void fun3() throws Exception {
 			if(rs != null) rs.close();
 			if(stmt != null) stmt.close();
 			if(con != null) con.close();
-		}
-		
+		}		
 	}
 }
 ```
@@ -142,35 +134,29 @@ public boolean login2(String username, String password) throws Exception {
 		// 加载驱动类
 		Class.forName(driverClassName);
 		// 得到Connection
-		Connection con = DriverManager.getConnection(url, mysqlUsername, mysqlPassword);
-		
+		Connection con = DriverManager.getConnection(url, mysqlUsername, mysqlPassword);		
 		/*
 		 * 一、得到PreparedStatement
 		 * 1. 给出sql模板：所有的参数使用?来替代
 		 * 2. 调用Connection方法，得到PreparedStatement
 		 */
 		String sql = "select * from t_user where username=? and password=?";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		
+		PreparedStatement pstmt = con.prepareStatement(sql);		
 		// 二、为参数赋值
 		pstmt.setString(1, username);//给第1个问号赋值，值为username
-		pstmt.setString(2, password);//给第2个问号赋值，值为password
-		
-		ResultSet rs = pstmt.executeQuery();//调用查询方法，向数据库发送查询语句
-		
+		pstmt.setString(2, password);//给第2个问号赋值，值为password		
+		ResultSet rs = pstmt.executeQuery();//调用查询方法，向数据库发送查询语句		
 		pstmt.setString(1, "liSi");
 		pstmt.setString(2, "123");
 		pstmt.executeQuery();
 		return rs.next();
-	}
-	
+	}	
 	public void fun2() throws Exception {
 		String username = "zhangSan";
 		String password = "123";
 		boolean bool = login2(username, password);
 		System.out.println(bool);
-	}
-	
+	}	
 ```
 
 ## JDBCUtils
@@ -192,14 +178,12 @@ static{
 				e.printStackTrace();
 			}
 		}
-		
-		
+				
 public class AccountDao {
 	public static void update(String name, double money) throws SQLException {
 		QueryRunner qr = new TxQueryRunner();
 		String sql = "update account set balance=balance+? where name=?";
-		Object[] params = {money, name};
-		
+		Object[] params = {money, name};		
 		// 我们需要自己来提供连接，保证多次调用使用的是同一个连接！
 		qr.update(sql, params);
 	}
