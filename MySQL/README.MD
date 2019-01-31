@@ -16,7 +16,6 @@ CREATE TABLE (IF NOT EXISTS) 表名(
     ...
     列名 列类型
   );
-
 CREATE TABLE tb_stu(
       number char(11), 
       name varchar(50), 
