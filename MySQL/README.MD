@@ -53,8 +53,7 @@ CREATE TABLE stu(
 	age		INT,
 	gender	VARCHAR(10) 
     );
-    指定sid列为主键列，即为sid列添加主键约束
-   
+    指定sid列为主键列，即为sid列添加主键约束  
     CREATE TABLE stu(
 	sid	    CHAR(6),
 	sname	VARCHAR(20),
