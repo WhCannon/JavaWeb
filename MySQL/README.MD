@@ -118,7 +118,6 @@ create table student(
     tid int PRIMARY KEY,
     ...
   );
-
   create table stu_tea(
     sid int,
     tid int,
