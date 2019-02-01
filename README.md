@@ -6,7 +6,7 @@
   - [JQuery](https://github.com/WhCannon/JavaWeb/tree/master/jQuery/README.MD)
   - [Bootstrap](https://github.com/WhCannon/JavaWeb/tree/master/Bootstrap/README.MD)
   ## JavaWeb
-  - [xml](https://github.com/WhCannon/JavaWeb/tree/master/Xml/README.MD) 
+  - [xml](https://github.com/WhCannon/JavaWeb/tree/master/xml/README.MD) 
   - [Tomcat](https://github.com/WhCannon/JavaWeb/tree/master/Tomcat/README.MD) 
   - [HTTP](https://github.com/WhCannon/JavaWeb/tree/master/HTTP/README.MD)
   - [Servlet](https://github.com/WhCannon/JavaWeb/tree/master/Servlet/README.MD)
