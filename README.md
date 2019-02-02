@@ -26,11 +26,11 @@
   - [文件上传与下载](https://github.com/WhCannon/JavaWeb/tree/master/Upload/README.MD)
   - [Ajax](https://github.com/WhCannon/JavaWeb/tree/master/Ajax/README.MD)
   - [JSON](https://github.com/WhCannon/JavaWeb/tree/master/JSON/README.MD)
-  - [注解](https://github.com/WhCannon/JavaWeb/tree/master/Ann/README.MD)
   - [IOC](https://github.com/WhCannon/JavaWeb/tree/master/IOC/README.MD)
   - [Servlet3.0](https://github.com/WhCannon/JavaWeb/tree/master/3.0/README.MD)
   - [动态代理](https://github.com/WhCannon/JavaWeb/tree/master/Proxy/README.MD)
   - [类加载器](https://github.com/WhCannon/JavaWeb/tree/master/ClassLoader/README.MD)
   ## 其他
+  - [注解](https://github.com/WhCannon/JavaWeb/tree/master/Ann/README.MD)
   - [JavaMail](https://github.com/WhCannon/JavaWeb/tree/master/Mail/README.MD)
   - [Java生成图片](https://github.com/WhCannon/JavaWeb/tree/master/JavaPic/README.MD)
