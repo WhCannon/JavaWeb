@@ -24,7 +24,6 @@
   - [项目架构](https://github.com/WhCannon/JavaWeb/tree/master/Service/README.MD)
   - [国际化](https://github.com/WhCannon/JavaWeb/tree/master/Locale/README.MD)
   - [文件上传与下载](https://github.com/WhCannon/JavaWeb/tree/master/Upload/README.MD)
-  - [JavaMail](https://github.com/WhCannon/JavaWeb/tree/master/Mail/README.MD)
   - [Ajax](https://github.com/WhCannon/JavaWeb/tree/master/Ajax/README.MD)
   - [JSON](https://github.com/WhCannon/JavaWeb/tree/master/JSON/README.MD)
   - [注解](https://github.com/WhCannon/JavaWeb/tree/master/Ann/README.MD)
@@ -33,4 +32,5 @@
   - [动态代理](https://github.com/WhCannon/JavaWeb/tree/master/Proxy/README.MD)
   - [类加载器](https://github.com/WhCannon/JavaWeb/tree/master/ClassLoader/README.MD)
   ## 其他
+  - [JavaMail](https://github.com/WhCannon/JavaWeb/tree/master/Mail/README.MD)
   - [Java生成图片](https://github.com/WhCannon/JavaWeb/tree/master/JavaPic/README.MD)
