@@ -32,7 +32,6 @@ public class AServlet implements Servlet {
 			throws ServletException, IOException {
 		System.out.println("service()...");
 	}
-
 	//是生命周期方法
 	//它会在Servlet被销毁之前调用，并且它只会被调用一次！
 	public void destroy() {
@@ -42,8 +41,7 @@ public class AServlet implements Servlet {
 	public ServletConfig getServletConfig() {
 		System.out.println("getServletConfig()...");
 		return null;
-	}
-	
+	}	
 	//获取Servlet的信息,几乎没用
 	public String getServletInfo() {
 		System.out.println("getServletInfo()...");
@@ -184,7 +182,6 @@ public class DServlet extends HttpServlet {
 public class FServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
  //Cache-Control、pragma、expires
 response.setHeader("Cache-Control", "no-cache");
 response.setHeader("pragma", "no-cache");
@@ -195,6 +192,7 @@ response.getWriter().print("hello hello!");
 ```
 
 ## request
+
 
 ## BaseServlet
 ```java
