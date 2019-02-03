@@ -78,7 +78,6 @@ public class AServlet implements Servlet {
     	    <param-value>paramValue2</param-value>
     </init-param>
   </servlet>
-
 ```
 
 ## GenericServlet
