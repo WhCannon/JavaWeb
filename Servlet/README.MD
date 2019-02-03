@@ -55,14 +55,13 @@ public class AServlet implements Servlet {
 ### 浏览器访问Servlet
 ```xml
 <servlet>
-		<servlet-name>hello</servlet-name>
-		<servlet-class>cn.itcast.servlet.HelloServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>hello</servlet-name>
-		<url-pattern>/helloworld</url-pattern>
-	</servlet-mapping>  
-
+	<servlet-name>hello</servlet-name>
+	<servlet-class>cn.itcast.servlet.HelloServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>hello</servlet-name>
+	<url-pattern>/helloworld</url-pattern>
+</servlet-mapping>  
 ```
 
 ## ServletConfig
