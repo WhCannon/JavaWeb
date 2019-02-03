@@ -48,8 +48,7 @@ public class AServlet implements Servlet {
 	public String getServletInfo() {
 		System.out.println("getServletInfo()...");
 		return "我是一个快乐的Servlet";
-	}
-}
+	}}
 ```
 
 ### 浏览器访问Servlet
@@ -143,8 +142,7 @@ public void init(ServletConfig config) {
 public class MyServlet extends HttpServlet {
 public void doGet(HttpServletRequest request, HttpServletResponse response) {
     ServletContext context = this.getServletContext();
-}
-}
+}}
 ```
 
 * 配置初始化参数
@@ -156,7 +154,6 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 	<param-value>paramValue1</param-value>  	
   </context-param>
  </web-app>
-
 ```
 
 ## response
