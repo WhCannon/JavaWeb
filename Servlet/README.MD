@@ -202,8 +202,7 @@ public abstract class BaseServlet extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// 获取参数，用来识别用户想请求的方法
-		String methodName = req.getParameter("method");
-		
+		String methodName = req.getParameter("method");		
 		if(methodName == null || methodName.trim().isEmpty()) {
 			throw new RuntimeException("您没有传递method参数！无法确定您想要调用的方法！");
 		}
@@ -218,7 +217,7 @@ public abstract class BaseServlet extends HttpServlet {
 			method = c.getMethod(methodName, 
 					HttpServletRequest.class, HttpServletResponse.class);
 		} catch (Exception e) {
-			throw new RuntimeException("您要调用的方法：" + methodName + "(HttpServletRequest,HttpServletResponse)，它不存在！");
+		throw new RuntimeException("您要调用的方法：" + methodName + "(HttpServletRequest,HttpServletResponse)，它不存在！");
 		}
 		
 		// 调用method表示的方法
@@ -253,9 +252,7 @@ public abstract class BaseServlet extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("您调用的方法：" + methodName + ",　它内部抛出了异常！");
 			throw new RuntimeException(e);
-		}
-	}
-}
+		}}}
 ```
 
 ## 练 习
@@ -289,8 +286,7 @@ public class AServlet extends HttpServlet {
 			app.setAttribute("count", 1);
 		} else {
 			app.setAttribute("count", count+1);
-		}
-		
+		}		
 		//	向浏览器输出 需要使用响应对象！
 		PrintWriter pw = response.getWriter();
 		pw.print("<h1>" + count + "</h1>");
