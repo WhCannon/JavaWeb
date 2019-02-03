@@ -127,9 +127,7 @@ public abstract class GenericServlet implements Servlet, ServletConfig,
     @Override
     public String getServletName() {
         return config.getServletName();
-    }
-}
-
+    }}
 ```
 
 ## ServletContext
