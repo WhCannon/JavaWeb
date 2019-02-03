@@ -162,27 +162,22 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 public class BServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("BServlet");
-		
+		System.out.println("BServlet");		
 		response.setHeader("Location", "/day10_1/CServlet");//设置Location
-		response.setStatus(302);//发送302状态码
-		
+		response.setStatus(302);//发送302状态码		
 		//快捷的重定向方法
 		response.sendRedirect("/day10_1/CServlet");
-	}
-}
+	}}
 ```
 * 定时刷新（定时重定向）
 ```java
 public class DServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		PrintWriter writer = response.getWriter();
 		writer.print("欢迎XXX登录！5秒钟后会自动跳转到主页！您看到的一定是乱码！");
 		response.setHeader("Refresh", "5;URL=/day10_1/EServlet");
-	}
-}
+	}}
 ```
 * 禁用浏览器缓存
 ```java
