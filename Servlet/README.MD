@@ -13,21 +13,18 @@
 ### 接口中的5个方法
 ```java
 public class AServlet implements Servlet {
-
 	//	 它是生命周期方法
 	//	 它会在Servlet对象创建之后马上执行，并只执行一次！（出生之后）
 	public void init(ServletConfig servletConfig) throws ServletException {
 		System.out.println("init()...");
 		 // 获取初始化参数
 		System.out.println(servletConfig.getInitParameter("p1"));
-		System.out.println(servletConfig.getInitParameter("p2"));
-		
+		System.out.println(servletConfig.getInitParameter("p2"));		
 		 // 获取所有初始化参数的名称
 		Enumeration e = servletConfig.getInitParameterNames();
 		while(e.hasMoreElements()) {
 			System.out.println(e.nextElement());
-		}
-	}
+		}}
 
 	 // 它是生命周期方法
 	 // 它会被调用多次,每次处理请求都是在调用这个方法！
