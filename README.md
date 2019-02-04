@@ -19,7 +19,7 @@
   - [Servlet3.0](https://github.com/WhCannon/JavaWeb/tree/master/3.0/README.MD)
   - [Ajax](https://github.com/WhCannon/JavaWeb/tree/master/Ajax/README.MD)
   - [JSON](https://github.com/WhCannon/JavaWeb/tree/master/JSON/README.MD)
-  ## MySQL数据库
+  ## 数据库
   - [MySQL](https://github.com/WhCannon/JavaWeb/tree/master/MySQL/README.MD)
   - [JDBC](https://github.com/WhCannon/JavaWeb/tree/master/JDBC/README.MD)
   - [事务](https://github.com/WhCannon/JavaWeb/tree/master/SW/README.MD)
