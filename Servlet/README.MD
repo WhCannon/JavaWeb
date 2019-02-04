@@ -25,7 +25,6 @@ public class AServlet implements Servlet {
 		while(e.hasMoreElements()) {
 			System.out.println(e.nextElement());
 		}}
-
 	 // 它是生命周期方法
 	 // 它会被调用多次,每次处理请求都是在调用这个方法！
 	public void service(ServletRequest request, ServletResponse response)
