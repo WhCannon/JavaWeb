@@ -62,7 +62,7 @@ public class AServlet implements Servlet {
 
 ## ServletConfig
 ```xml
- <servlet>
+<servlet>
     <servlet-name>One</servlet-name>
     <servlet-class>cn.itcast.servlet.OneServlet</servlet-class>
     <init-param>
@@ -73,7 +73,7 @@ public class AServlet implements Servlet {
     	    <param-name>paramName2</param-name>
     	    <param-value>paramValue2</param-value>
     </init-param>
-  </servlet>
+</servlet>
 ```
 
 ## GenericServlet
