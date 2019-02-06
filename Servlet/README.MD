@@ -70,8 +70,8 @@ public class AServlet implements Servlet {
     	<param-value>paramValue1</param-value>
     </init-param>
     <init-param>
-    	    <param-name>paramName2</param-name>
-    	    <param-value>paramValue2</param-value>
+    	<param-name>paramName2</param-name>
+    	<param-value>paramValue2</param-value>
     </init-param>
 </servlet>
 ```
