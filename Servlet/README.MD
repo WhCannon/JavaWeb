@@ -150,7 +150,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 	<param-name>paramName1</param-name>
 	<param-value>paramValue1</param-value>  	
   </context-param>
- </web-app>
+</web-app>
 ```
 
 ## response
@@ -202,8 +202,7 @@ public abstract class BaseServlet extends HttpServlet {
 		String methodName = req.getParameter("method");		
 		if(methodName == null || methodName.trim().isEmpty()) {
 			throw new RuntimeException("您没有传递method参数！无法确定您想要调用的方法！");
-		}
-		
+		}		
 		// 得到方法名，再通过方法名得到Method类的对象！
 		// 需要得到Class，然后调用它的方法进行查询，得到Method
 		// 我们要查询的是当前类的方法，所以我们需要得到当前类的Class
@@ -215,8 +214,7 @@ public abstract class BaseServlet extends HttpServlet {
 					HttpServletRequest.class, HttpServletResponse.class);
 		} catch (Exception e) {
 		throw new RuntimeException("您要调用的方法：" + methodName + "(HttpServletRequest,HttpServletResponse)，它不存在！");
-		}
-		
+		}		
 		// 调用method表示的方法
 		try {
 			String result = (String)method.invoke(this, req, resp);
