@@ -67,7 +67,7 @@ public class AServlet implements Servlet {
     <servlet-class>cn.itcast.servlet.OneServlet</servlet-class>
     <init-param>
       	<param-name>paramName1</param-name>
-    	    <param-value>paramValue1</param-value>
+    	<param-value>paramValue1</param-value>
     </init-param>
     <init-param>
     	    <param-name>paramName2</param-name>
