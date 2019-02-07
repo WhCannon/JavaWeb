@@ -154,11 +154,12 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 ```
 * 获取资源路径
 ```java
-获取真实路径：String realPath = servletContext.getRealPath(“/WEB-INF/b.txt”)；
-  realPath的值为F:\tomcat6\webapps\hello\WEB-INF\b.txt（资源的物理路径）
+获取真实路径：
+String realPath = servletContext.getRealPath(“/WEB-INF/b.txt”)；
+realPath的值为F:\tomcat6\webapps\hello\WEB-INF\b.txt（资源的物理路径）
 获取资源流（获取资源的路径后，再创建输入流对象）：
 InputStream in = servletContext.getResourceAsStream(“/WEB-INF/b.txt”)；
-相当于String realPath = servletContext.getRealPath(“/WEB-INF/b.txt”)
+相当于：String realPath = servletContext.getRealPath(“/WEB-INF/b.txt”)
        InputStream in = new FileInputStream(realPath);
 获取指定目录下所有资源的路径：
 Set set = context.getResourcePaths("/WEB-INF");
