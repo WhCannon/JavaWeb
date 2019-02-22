@@ -2,6 +2,31 @@
   - [练习](#练-习)
   
   
+## Cookie
+```jsp
+ <body>
+<h1>保存Cookie</h1>
+<%
+	Cookie cookie1 = new Cookie("aaa", "AAA");
+	response.addCookie(cookie1);
+	
+	Cookie cookie2 = new Cookie("bbb", "BBB");
+	response.addCookie(cookie2);
+%>
+  </body>
+  
+<body>
+<h1>获取Cookie</h1>
+<%
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null) {
+		for(Cookie c : cookies) {
+			out.print(c.getName() + "=" + c.getValue() + "<br/>");
+		}
+	}
+%>
+  </body>
+```
 
 
 
