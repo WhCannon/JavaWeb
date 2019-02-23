@@ -1,4 +1,4 @@
-# 事务
+# 事务transaction
 
 
 ## jdbc处理事务的格式
