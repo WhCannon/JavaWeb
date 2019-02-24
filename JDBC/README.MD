@@ -2,10 +2,10 @@
   - [Connection对象](#connection对象)
   - [JDBC完成增删改查](#jdbc完成增删改查)
   - [PreparedStatement](#preparedstatement)
-  - [JDBCUtils](#jdbcutils)
+  - [JDBCUtils处理事务](#jdbcutils)
   - [处理大型文件](#处理大型文件)
   - [批处理](#批处理)
-  - [dbutils](#dbutils)
+  - [dbutils简化数据库CRUD代码](#dbutils)
 
 ## Connection对象
 ```java
