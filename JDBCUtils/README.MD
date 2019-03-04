@@ -1,4 +1,4 @@
-# JDBCUtils
+# JDBCUtils-可以处理事务
 ```java
 static{
 	try {
