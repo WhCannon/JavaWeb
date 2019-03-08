@@ -33,5 +33,39 @@
 					$("#div01").html(data);
 				});}	})});
  ```
- 
+ Servlet
+ ```java
+ public class FindWordsServlet extends HttpServlet{
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	request.setCharacterEncoding("utf-8");
+	try {
+		//1. 先获取参数
+		String word = request.getParameter("word");
+		System.out.println("word="+word);
+		//2. 让dao执行查询
+		WordsDao dao = new WordsDaoImpl();
+		List<WordBean> list = dao.findWords(word);
+		for (WordBean wordBean : list) {
+					System.out.println("==="+wordBean.toString());
+				}				
+		request.setAttribute("list", list);			
+		//3. 返回数据
+		response.setContentType("text/html;charset=utf-8");
+		request.getRequestDispatcher("list.jsp").forward(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}}
+ ```
+ list.jsp
+ ```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<table style="width: 100%">
+	<c:forEach items="${list }" var="wordBean">
+		<tr>
+			<td>${wordBean.words}</td>
+		</tr>
+	</c:forEach>
+</table>
+ ```
  
