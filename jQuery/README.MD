@@ -28,10 +28,9 @@
 			}else{
 				//3. 请求数据
 				$.post("find",{word:word} ,function(data , status){
-					//alert(data);
 					$("#div01").show();
 					$("#div01").html(data);
-				});}	})});
+				});}})});
  ```
  Servlet
  ```java
@@ -44,10 +43,7 @@
 		System.out.println("word="+word);
 		//2. 让dao执行查询
 		WordsDao dao = new WordsDaoImpl();
-		List<WordBean> list = dao.findWords(word);
-		for (WordBean wordBean : list) {
-					System.out.println("==="+wordBean.toString());
-				}				
+		List<WordBean> list = dao.findWords(word);				
 		request.setAttribute("list", list);			
 		//3. 返回数据
 		response.setContentType("text/html;charset=utf-8");
