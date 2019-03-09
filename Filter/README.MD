@@ -325,7 +325,6 @@ public class LoginServlet extends HttpServlet {
 					Cookie cookie = new Cookie("auto_login", userName+"#itheima#"+password);
 					cookie.setMaxAge(60*60*24*7);//7天有效期
 					cookie.setPath("/AutoLoginDemo");
-					//cookie.setPath(request.getContextPath());
 					response.addCookie(cookie);				
 				}			
 				//成功了，进入首页
@@ -338,5 +337,18 @@ public class LoginServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}}
+```
+* UserDaoImpl
+```java
+public class UserDaoImpl implements UserDao {
+	@Override
+	public UserBean login(UserBean user) throws SQLException {		
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "select * from t_user where username = ? and password = ?";
+		UserBean query = runner.query(sql, new BeanHandler<UserBean>(UserBean.class) , 
+						user.getUsername() , user.getPassword());
+		return query;
+	}
+}
 ```
 
