@@ -303,5 +303,8 @@ public class StaticResponse extends HttpServletResponseWrapper {
 ```
 
 ## 案例5
-自动登录
+自动登录（第二次登陆不用再输用户名和密码）
+```java
+
+```
 
