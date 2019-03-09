@@ -351,4 +351,5 @@ public class UserDaoImpl implements UserDao {
 	}
 }
 ```
+* UserBean（略）
 
