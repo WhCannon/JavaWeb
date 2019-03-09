@@ -352,4 +352,16 @@ public class UserDaoImpl implements UserDao {
 }
 ```
 * UserBean（略）
+* index.jsp
+```jsp
+<body>
+	这是首页 
+	<c:if test="${not empty  userBean}">
+		欢迎您, ${userBean.username }!
+	</c:if>	
+	<c:if test="${ empty  userBean}">
+		您好，请登录!
+	</c:if>	
+</body>
+```
 
