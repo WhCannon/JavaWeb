@@ -7,7 +7,6 @@
 ## 定义注解及使用
 ```java
 public @interface MyAnn{}
-
 @MyAnn
 public class MyClass {
 	@MyAnn
@@ -29,7 +28,6 @@ public @interface MyAnn {
 	String value();
 	int value1();
 }
-
 ```
 
 ## 反射泛型信息
@@ -54,10 +52,8 @@ abstract class A<T> {
 		System.out.println(c.getName());
 	}
 }
-
 class B extends A<String> {
 }
-
 class C extends A<Integer> {
 }
 ```
@@ -72,8 +68,7 @@ public class Demo2 {
 		MyAnno1 myAnno1 = c.getAnnotation(MyAnno1.class);
 		System.out.println(myAnno1.name() + ", " 
 					+ myAnno1.age() + ", " + myAnno1.sex());
-	}
-	
+	}	
 	//得到Method、Constructor、Field上的注解
 	public void fun2() throws SecurityException, NoSuchMethodException {
 		 // 1. 得到作用目标
@@ -85,14 +80,12 @@ public class Demo2 {
 					+ myAnno1.age() + ", " + myAnno1.sex());
 	}
 }
-
 @MyAnno1(name="A类", age=1, sex="男")
 class A {
 	@MyAnno1(name="fun1方法", age=2, sex="女")
 	public void fun1() {
 	}
 }
-
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnno1 {
 	String name();
