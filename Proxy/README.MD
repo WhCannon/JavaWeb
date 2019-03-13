@@ -141,12 +141,9 @@ public class Demo3 {
 使用过滤器统一处理
 ```java
 public class EncodingFilter implements Filter {
-	public EncodingFilter() {
-    	}
-	public void destroy() {
-	}
-	public void init(FilterConfig fConfig) throws ServletException {
-	}
+	public EncodingFilter() { }
+	public void destroy() { }
+	public void init(FilterConfig fConfig) throws ServletException { }
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		//将request对象转换为HttpServletRequest
 		final HttpServletRequest req=(HttpServletRequest)request;
